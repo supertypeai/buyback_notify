@@ -52,3 +52,6 @@ def fetch_announcements() -> list[dict]:
 
 
 def filter_keyword(announcements: list[dict], keyword: str) -> list[dict]:
+    """Return announcements whose title contains keyword (case-insensitive)"""
+    kw = keyword.lower()
+    return [a for a in announcements if kw in a["title"].lower()]
