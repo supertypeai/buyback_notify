@@ -14,3 +14,5 @@ SEEN_FILE = os.getenv("SEEN_FILE", "seen_announcements.json")
 # IDX endpoints
 IDX_API_URL = "https://www.idx.co.id/primary/NewsAnnouncement/GetAllAnnouncement"
 IDX_PAGE_URL = "https://www.idx.co.id/en/news/announcement"
+
+PROXY_URL = os.getenv("PROXY_URL", "")

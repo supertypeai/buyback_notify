@@ -1,21 +1,41 @@
-import cloudscraper
-from config import IDX_API_URL, IDX_PAGE_URL, KEYWORD
+import requests
+import urllib3
+from config import IDX_API_URL, IDX_PAGE_URL, KEYWORD, PROXY_URL
 
-_scraper = cloudscraper.create_scraper()
-_scraper.headers.update({
+# Suppress SSL warnings that come with verify=False
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/119.0.0.0 Safari/537.36"
+    ),
+    "Accept": "application/json, text/javascript, */*; q=0.01",
+    "X-Requested-With": "XMLHttpRequest",
     "Referer": IDX_PAGE_URL,
-})
+}
+
+_PROXIES = {"http": PROXY_URL, "https": PROXY_URL} if PROXY_URL else None
 
 
 def fetch_announcements() -> list[dict]:
-    """Fetch announcements from the IDX API (Cloudflare-protected)"""
+    """Fetch announcements from the IDX API via proxy with browser-like headers."""
     params = {
         "keywords": KEYWORD,
         "pageNumber": 1,
         "pageSize": 20,
         "lang": "en",
     }
-    resp = _scraper.get(IDX_API_URL, params=params, timeout=15)
+
+    resp = requests.get(
+        IDX_API_URL,
+        params=params,
+        headers=_HEADERS,
+        proxies=_PROXIES,
+        timeout=15,
+        verify=False,  # disables SSL cert check
+    )
     resp.raise_for_status()
     data = resp.json()
 
