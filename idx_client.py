@@ -1,10 +1,9 @@
-import cloudscraper
+from curl_cffi import requests as cffi_requests
 from config import IDX_API_URL, IDX_PAGE_URL, KEYWORD
 
-_scraper = cloudscraper.create_scraper()
-_scraper.headers.update({
+_HEADERS = {
     "Referer": IDX_PAGE_URL,
-})
+}
 
 
 def fetch_announcements() -> list[dict]:
@@ -15,7 +14,13 @@ def fetch_announcements() -> list[dict]:
         "pageSize": 20,
         "lang": "en",
     }
-    resp = _scraper.get(IDX_API_URL, params=params, timeout=15)
+    resp = cffi_requests.get(
+        IDX_API_URL,
+        params=params,
+        headers=_HEADERS,
+        impersonate="chrome",
+        timeout=15,
+    )
     resp.raise_for_status()
     data = resp.json()
 
@@ -47,7 +52,7 @@ def fetch_announcements() -> list[dict]:
             }
         )
 
-    print(f"  Fetched {len(announcements)} announcements via API.")
+    print(f"Fetched {len(announcements)} announcements via API")
     return announcements
 
 
