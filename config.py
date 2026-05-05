@@ -8,7 +8,7 @@ SENDER_EMAIL = os.environ["SENDER_EMAIL"]
 RECEIVER_EMAIL = os.environ["RECEIVER_EMAIL"]
 
 # Announcement settings
-KEYWORD = os.getenv("KEYWORD", "buyback")
+KEYWORD = os.getenv("KEYWORD", "share buyback report")
 SEEN_FILE = os.getenv("SEEN_FILE", "seen_announcements.json")
 
 # IDX endpoints
