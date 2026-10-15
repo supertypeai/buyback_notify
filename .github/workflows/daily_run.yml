@@ -34,10 +34,20 @@ jobs:
           PROXY_URL: ${{ secrets.PROXY_URL }}
         run: python automation/buyback_sync.py --days 14 ${{ vars.BUYBACK_UPSERT != 'true' && '--dry-run' || '' }}
 
-      - name: Commit extraction cache
+      - name: Sync treasury registry into idx_buybacks
+        # Runs even if the buyback sync failed. Writes only when the repo variable TREASURY_UPSERT is "true"
+        if: ${{ !cancelled() }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: python automation/treasury_sync.py ${{ vars.TREASURY_UPSERT != 'true' && '--dry-run' || '' }}
+
+      - name: Commit extraction caches
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/buyback_extractions.json
+          git add data/
           git diff --cached --quiet || git commit -m "chore: update buyback extractions [skip ci]"
           git push
