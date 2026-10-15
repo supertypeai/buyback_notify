@@ -36,7 +36,15 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           PROXY_URL: ${{ secrets.PROXY_URL }}
-        run: python automation/buyback_sync.py ${{ inputs.since && format('--since {0}', inputs.since) || '--days 14' }} ${{ vars.BUYBACK_UPSERT != 'true' && '--dry-run' || '' }}
+          SINCE: ${{ inputs.since }}
+          DRY_RUN: ${{ vars.BUYBACK_UPSERT != 'true' && '--dry-run' || '' }}
+        run: |
+          if [ -n "$SINCE" ]; then
+            [[ "$SINCE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "since must be YYYY-MM-DD"; exit 1; }
+            python automation/buyback_sync.py --since "$SINCE" $DRY_RUN
+          else
+            python automation/buyback_sync.py --days 14 $DRY_RUN
+          fi
 
       - name: Sync treasury registry into idx_buybacks
         # Runs even if the buyback sync failed. Writes only when the repo variable TREASURY_UPSERT is "true"

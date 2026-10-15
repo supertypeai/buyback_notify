@@ -16,7 +16,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
 from curl_cffi import requests as cffi_requests
 
-from buyback_guards import check, fix_scale, pdf_text, pdf_text_partial, repair
+from buyback_guards import SOFT_ISSUE_PREFIX, check, fix_scale, pdf_text, pdf_text_partial, repair
 
 IDX_API_URL = "https://www.idx.co.id/primary/NewsAnnouncement/GetAllAnnouncement"
 SEARCH_KEYWORDS = ["buyback", "buy back", "repurchase", "treasury", "pembelian kembali"]
@@ -35,9 +35,14 @@ _EXCLUDE_TITLE = re.compile(
     r"report of shares transfer from shares buy ?back"
     r"|bond|sukuk|debt securities|tier 1|\bAT1\b|repurchase agreement|\(repo\)"
     # Repurchases the law forces on the company (dissenting shareholders, delisting) are not programs
-    r"|article 62|pasal 62|delisting|go private",
+    r"|article 62|pasal 62|delisting|go private|cancel the listing"
+    r"|dissent|do not approve|tidak setuju|merger|spin.?off",
     re.IGNORECASE,
 )
+
+
+def excluded_title(title: str) -> bool:
+    return bool(_EXCLUDE_TITLE.search(" ".join(title.split())))
 
 _proxy = os.getenv("PROXY_URL", "")
 _session = cffi_requests.Session(
@@ -339,7 +344,7 @@ def extract_with_guards(announcement: dict, pdf_paths: list[str]) -> dict:
         result = extract_announcement(announcement, pdf_paths, FALLBACK_MODEL, text=text)
         result["escalated_from"] = OPENROUTER_MODEL
         result["extraction"] = repair(result["extraction"])
-        return result
+        return _soften(result)
     if result["guard_issues"] and FALLBACK_MODEL and FALLBACK_MODEL != OPENROUTER_MODEL:
         try:
             alt = extract_announcement(announcement, pdf_paths, FALLBACK_MODEL, text=text)
@@ -353,6 +358,16 @@ def extract_with_guards(announcement: dict, pdf_paths: list[str]) -> dict:
                 result = alt
             result["cost"] = total
     result["extraction"] = repair(result["extraction"])
+    return _soften(result)
+
+
+def _soften(result: dict) -> dict:
+    """Soft checks drive the retry and fallback above but don't block the program: some plans state
+    only a percentage cap, or just shorten an existing program."""
+    soft = [p for p in result["guard_issues"] if p.startswith(SOFT_ISSUE_PREFIX)]
+    if soft:
+        result["guard_issues"] = [p for p in result["guard_issues"] if p not in soft]
+        result["soft_issues"] = soft
     return result
 
 
