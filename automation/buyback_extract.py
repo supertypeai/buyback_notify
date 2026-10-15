@@ -41,6 +41,8 @@ _proxy = os.getenv("PROXY_URL", "")
 _session = cffi_requests.Session(
     impersonate="chrome",
     proxies={"http": _proxy, "https": _proxy} if _proxy else None,
+    # The proxy re-signs HTTPS with its own certificate, so verification fails through it
+    verify=not _proxy,
 )
 
 

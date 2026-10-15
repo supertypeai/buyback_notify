@@ -54,18 +54,25 @@ _MONTHS = {m: i for i, m in enumerate(
 
 # ---------------------------------------------------------------- IDX access
 
+class IdxUnreachable(RuntimeError):
+    """No session could reach IDX at all; retrying company by company would only waste time."""
+
+
 def _new_session():
+    last = None
     for imp in _FINGERPRINTS:
-        s = cffi_requests.Session(impersonate=imp, proxies=_PROXIES)
+        # The proxy re-signs HTTPS with its own certificate, so verification fails through it
+        s = cffi_requests.Session(impersonate=imp, proxies=_PROXIES, verify=not _proxy)
         try:
             s.get("https://www.idx.co.id/en/", timeout=30)
             probe = s.get(ANNOUNCEMENT_URL, params={"kodeEmiten": "BBCA", "emitenType": "*", "indexFrom": 0,
                                                     "pageSize": 1, "lang": "en"}, timeout=30)
             if probe.status_code == 200:
                 return s
-        except Exception:
-            pass
-    raise RuntimeError("IDX blocked every TLS fingerprint (Cloudflare); set PROXY_URL")
+            last = f"HTTP {probe.status_code}"
+        except Exception as e:
+            last = f"{type(e).__name__}: {e}"
+    raise IdxUnreachable(f"IDX unreachable with every TLS fingerprint (last: {last})")
 
 
 def _get(url: str, params: dict | None = None, retries: int = 4):
@@ -81,6 +88,8 @@ def _get(url: str, params: dict | None = None, retries: int = 4):
                 _session = None  # Cloudflare challenge: try a fresh session / fingerprint
             elif resp.status_code == 429:
                 time.sleep(30 * (attempt + 1))  # rate limited: back off well beyond the usual retry
+        except IdxUnreachable:
+            raise
         except Exception as e:
             print(f"  {type(e).__name__} for {url}: {e}")
         time.sleep(5 * (attempt + 1))
@@ -322,6 +331,8 @@ def plan_updates(rows: list[dict], include_ended: bool, cache: dict) -> list[dic
         print(f"  [{n}/{len(by_code)}] {code}: reports {date_from} .. {date_to}")
         try:
             months = company_months(code, date_from, date_to, cache)
+        except IdxUnreachable:
+            raise
         except Exception as e:
             print(f"  ! {code}: {e}")
             continue
