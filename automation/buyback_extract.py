@@ -28,7 +28,7 @@ FALLBACK_MODEL = os.getenv("OPENROUTER_FALLBACK_MODEL", "~deepseek/deepseek-flas
 MAX_PDF_BYTES = 15 * 1024 * 1024
 REQUEST_TIMEOUT = int(os.getenv("OPENROUTER_TIMEOUT", "120"))
 # Bump when the prompt/guards change so cached extractions are redone
-EXTRACTION_VERSION = 3
+EXTRACTION_VERSION = 4
 
 # Titles that are never about a company buying back its own shares
 _EXCLUDE_TITLE = re.compile(
@@ -245,6 +245,9 @@ def _pdf_parts(pdf_paths: list[str], model: str = OPENROUTER_MODEL) -> list[dict
             "type": "file",
             "file": {"filename": os.path.basename(path), "file_data": f"data:application/pdf;base64,{b64}"},
         })
+    # Without document parts the model only sees the title and returns a plausible but empty extraction
+    if not parts:
+        raise RuntimeError(f"no readable document content for {model} in {pdf_paths}")
     return parts
 
 
@@ -252,6 +255,7 @@ def _page_images(path: str, max_pages: int = 12, scale: float = 1.6) -> list[dic
     """Render PDF pages to JPEG (~115 dpi; enough for scanned tables, small token count)."""
     import io
     import pypdfium2 as pdfium
+    import PIL  # noqa: F401  to_pil() needs Pillow, which pypdfium2 does not install; fail loudly, not per page
 
     parts = []
     with _PDFIUM_LOCK:
@@ -259,7 +263,8 @@ def _page_images(path: str, max_pages: int = 12, scale: float = 1.6) -> list[dic
             pdf = pdfium.PdfDocument(path)
             images = [pdf[i].render(scale=scale).to_pil().convert("L") for i in range(min(len(pdf), max_pages))]
             pdf.close()
-        except Exception:
+        except Exception as e:  # a corrupt or encrypted PDF; the announcement's other PDFs may still be readable
+            print(f"  cannot render {path}: {type(e).__name__}: {e}")
             return parts
     for img in images:
         buf = io.BytesIO()
