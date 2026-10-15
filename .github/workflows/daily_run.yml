@@ -5,6 +5,10 @@ on:
     # Every day at 10:00 UTC (17:00 WIB)
     - cron: "0 10 * * *"
   workflow_dispatch:
+    inputs:
+      since:
+        description: "Backfill from this date (YYYY-MM-DD) instead of the last 14 days"
+        required: false
 
 permissions:
   contents: write
@@ -32,7 +36,7 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           PROXY_URL: ${{ secrets.PROXY_URL }}
-        run: python automation/buyback_sync.py --days 14 ${{ vars.BUYBACK_UPSERT != 'true' && '--dry-run' || '' }}
+        run: python automation/buyback_sync.py ${{ inputs.since && format('--since {0}', inputs.since) || '--days 14' }} ${{ vars.BUYBACK_UPSERT != 'true' && '--dry-run' || '' }}
 
       - name: Sync treasury registry into idx_buybacks
         # Runs even if the buyback sync failed. Writes only when the repo variable TREASURY_UPSERT is "true"

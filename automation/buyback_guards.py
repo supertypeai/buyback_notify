@@ -91,8 +91,9 @@ def check(ex: dict, publish_date: str, text: str = "", partial_text: str = "") -
     if not ex.get("is_share_buyback") or ex.get("doc_type") == "other":
         return []
     problems = []
-    # Every plan states a budget or a share cap; neither means the document was not actually read
-    if ex.get("doc_type") in ("plan", "plan_update") and _n(ex.get("allocated_fund")) is None \
+    # Every plan states a budget or a share cap; neither means the document was not actually read.
+    # (plan_update is exempt: a correction may only restate dates or the schedule.)
+    if ex.get("doc_type") == "plan" and _n(ex.get("allocated_fund")) is None \
             and _n(ex.get("max_shares")) is None:
         problems.append("plan has neither allocated_fund nor max_shares - read the attached letter for the "
                         "maximum buyback budget and/or number of shares")

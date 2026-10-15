@@ -33,7 +33,9 @@ EXTRACTION_VERSION = 4
 # Titles that are never about a company buying back its own shares
 _EXCLUDE_TITLE = re.compile(
     r"report of shares transfer from shares buy ?back"
-    r"|bond|sukuk|debt securities|tier 1|\bAT1\b|repurchase agreement|\(repo\)",
+    r"|bond|sukuk|debt securities|tier 1|\bAT1\b|repurchase agreement|\(repo\)"
+    # Repurchases the law forces on the company (dissenting shareholders, delisting) are not programs
+    r"|article 62|pasal 62|delisting|go private",
     re.IGNORECASE,
 )
 
@@ -133,7 +135,10 @@ Return ONLY a JSON object with these keys:
       (a plan, a correction/amendment of a plan, a progress or realization report, or a completion /
       termination notice). false if it is only about transferring, selling, distributing or
       withdrawing treasury shares, buying back bonds/sukuk/other securities, buying shares of a
-      different company, or does not concern a buyback at all.
+      different company, or does not concern a buyback at all. Also false for repurchases the company
+      is obliged to make: from shareholders who voted against a merger, spin-off or other action
+      (Article/Pasal 62 of Law 40/2007, "pemegang saham yang tidak setuju") or because of a delisting
+      or go-private - these are not buyback programs.
   "doc_type": one of "plan", "plan_update", "progress_report", "final_report", "termination", "other".
       Use "final_report" when it reports results for the whole buyback period, "termination" for a
       notice that the buyback ended/was stopped early (it may also include results).
