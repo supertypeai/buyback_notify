@@ -16,7 +16,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import requests
 from curl_cffi import requests as cffi_requests
 
-from buyback_guards import check, fix_scale, pdf_text, pdf_text_partial, repair
+from buyback_guards import SOFT_ISSUE_PREFIX, check, fix_scale, pdf_text, pdf_text_partial, repair
 
 IDX_API_URL = "https://www.idx.co.id/primary/NewsAnnouncement/GetAllAnnouncement"
 SEARCH_KEYWORDS = ["buyback", "buy back", "repurchase", "treasury", "pembelian kembali"]
@@ -28,14 +28,21 @@ FALLBACK_MODEL = os.getenv("OPENROUTER_FALLBACK_MODEL", "~deepseek/deepseek-flas
 MAX_PDF_BYTES = 15 * 1024 * 1024
 REQUEST_TIMEOUT = int(os.getenv("OPENROUTER_TIMEOUT", "120"))
 # Bump when the prompt/guards change so cached extractions are redone
-EXTRACTION_VERSION = 3
+EXTRACTION_VERSION = 4
 
 # Titles that are never about a company buying back its own shares
 _EXCLUDE_TITLE = re.compile(
     r"report of shares transfer from shares buy ?back"
-    r"|bond|sukuk|debt securities|tier 1|\bAT1\b|repurchase agreement|\(repo\)",
+    r"|bond|sukuk|debt securities|tier 1|\bAT1\b|repurchase agreement|\(repo\)"
+    # Repurchases the law forces on the company (dissenting shareholders, delisting) are not programs
+    r"|article 62|pasal 62|delisting|go private|cancel the listing"
+    r"|dissent|do not approve|tidak setuju|merger|spin.?off",
     re.IGNORECASE,
 )
+
+
+def excluded_title(title: str) -> bool:
+    return bool(_EXCLUDE_TITLE.search(" ".join(title.split())))
 
 _proxy = os.getenv("PROXY_URL", "")
 _session = cffi_requests.Session(
@@ -133,7 +140,10 @@ Return ONLY a JSON object with these keys:
       (a plan, a correction/amendment of a plan, a progress or realization report, or a completion /
       termination notice). false if it is only about transferring, selling, distributing or
       withdrawing treasury shares, buying back bonds/sukuk/other securities, buying shares of a
-      different company, or does not concern a buyback at all.
+      different company, or does not concern a buyback at all. Also false for repurchases the company
+      is obliged to make: from shareholders who voted against a merger, spin-off or other action
+      (Article/Pasal 62 of Law 40/2007, "pemegang saham yang tidak setuju") or because of a delisting
+      or go-private - these are not buyback programs.
   "doc_type": one of "plan", "plan_update", "progress_report", "final_report", "termination", "other".
       Use "final_report" when it reports results for the whole buyback period, "termination" for a
       notice that the buyback ended/was stopped early (it may also include results).
@@ -245,6 +255,9 @@ def _pdf_parts(pdf_paths: list[str], model: str = OPENROUTER_MODEL) -> list[dict
             "type": "file",
             "file": {"filename": os.path.basename(path), "file_data": f"data:application/pdf;base64,{b64}"},
         })
+    # Without document parts the model only sees the title and returns a plausible but empty extraction
+    if not parts:
+        raise RuntimeError(f"no readable document content for {model} in {pdf_paths}")
     return parts
 
 
@@ -252,6 +265,7 @@ def _page_images(path: str, max_pages: int = 12, scale: float = 1.6) -> list[dic
     """Render PDF pages to JPEG (~115 dpi; enough for scanned tables, small token count)."""
     import io
     import pypdfium2 as pdfium
+    import PIL  # noqa: F401  to_pil() needs Pillow, which pypdfium2 does not install; fail loudly, not per page
 
     parts = []
     with _PDFIUM_LOCK:
@@ -259,7 +273,8 @@ def _page_images(path: str, max_pages: int = 12, scale: float = 1.6) -> list[dic
             pdf = pdfium.PdfDocument(path)
             images = [pdf[i].render(scale=scale).to_pil().convert("L") for i in range(min(len(pdf), max_pages))]
             pdf.close()
-        except Exception:
+        except Exception as e:  # a corrupt or encrypted PDF; the announcement's other PDFs may still be readable
+            print(f"  cannot render {path}: {type(e).__name__}: {e}")
             return parts
     for img in images:
         buf = io.BytesIO()
@@ -329,7 +344,7 @@ def extract_with_guards(announcement: dict, pdf_paths: list[str]) -> dict:
         result = extract_announcement(announcement, pdf_paths, FALLBACK_MODEL, text=text)
         result["escalated_from"] = OPENROUTER_MODEL
         result["extraction"] = repair(result["extraction"])
-        return result
+        return _soften(result)
     if result["guard_issues"] and FALLBACK_MODEL and FALLBACK_MODEL != OPENROUTER_MODEL:
         try:
             alt = extract_announcement(announcement, pdf_paths, FALLBACK_MODEL, text=text)
@@ -343,6 +358,16 @@ def extract_with_guards(announcement: dict, pdf_paths: list[str]) -> dict:
                 result = alt
             result["cost"] = total
     result["extraction"] = repair(result["extraction"])
+    return _soften(result)
+
+
+def _soften(result: dict) -> dict:
+    """Soft checks drive the retry and fallback above but don't block the program: some plans state
+    only a percentage cap, or just shorten an existing program."""
+    soft = [p for p in result["guard_issues"] if p.startswith(SOFT_ISSUE_PREFIX)]
+    if soft:
+        result["guard_issues"] = [p for p in result["guard_issues"] if p not in soft]
+        result["soft_issues"] = soft
     return result
 
 

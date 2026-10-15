@@ -13,6 +13,8 @@ from pypdf import PdfReader
 logging.getLogger("pypdf").setLevel(logging.ERROR)
 
 _SLACK = timedelta(days=3)
+# Problems starting with this trigger a retry / fallback but are not kept as blocking guard issues
+SOFT_ISSUE_PREFIX = "plan has neither allocated_fund nor max_shares"
 
 
 def _d(s):
@@ -91,6 +93,12 @@ def check(ex: dict, publish_date: str, text: str = "", partial_text: str = "") -
     if not ex.get("is_share_buyback") or ex.get("doc_type") == "other":
         return []
     problems = []
+    # Every plan states a budget or a share cap; neither means the document was not actually read.
+    # (plan_update is exempt: a correction may only restate dates or the schedule.)
+    if ex.get("doc_type") == "plan" and _n(ex.get("allocated_fund")) is None \
+            and _n(ex.get("max_shares")) is None:
+        problems.append(SOFT_ISSUE_PREFIX + " - read the attached letter for the maximum buyback budget "
+                        "and/or number of shares")
     published = _d(publish_date[:10])
     start, end = _d(ex.get("mandate_start_date")), _d(ex.get("mandate_end_date"))
     txs = ex.get("transactions") or []

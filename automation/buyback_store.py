@@ -84,10 +84,15 @@ def _new_program(symbol: str) -> dict:
 
 
 def build_programs(cache: dict) -> list[dict]:
+    from buyback_extract import excluded_title
+
     docs = []
     for entry in cache.values():
         ex, ann = entry["extraction"], entry["announcement"]
         if not ex.get("is_share_buyback") or ex.get("doc_type") == "other":
+            continue
+        # Entries cached before a title exclusion was added must not form programs either
+        if excluded_title(ann.get("title") or ""):
             continue
         symbol = (ex.get("symbol") or ann["symbol"] or "").strip().upper()
         if not symbol:
@@ -226,7 +231,9 @@ def _match_existing(row: dict, start_inferred: bool, existing: list[dict]):
             continue
         overlaps = s <= xe + _MATCH_SLACK and (en is None or xs <= en + _MATCH_SLACK)
         close_start = abs((xs - s).days) <= 7
-        if overlaps and (close_start or start_inferred or en is None):
+        # An extension filing starts later than the program it extends but ends on the same day
+        same_end = en is not None and en == xe
+        if overlaps and (close_start or start_inferred or en is None or same_end):
             candidates.append((abs((xs - s).days), e))
     return min(candidates, key=lambda c: c[0])[1] if candidates else None
 
@@ -249,7 +256,21 @@ def _keep_existing_values(row: dict, existing: dict):
         row["transaction_details"] = [ours[k] for k in sorted(ours)]
 
 
-def plan_rows(programs: list[dict], existing: list[dict] | None, known_symbols: set | None) -> list[dict]:
+def _lock_key(symbol: str, mandate: dict) -> tuple:
+    m = mandate or {}
+    return symbol, m.get("start_date"), m.get("end_date")
+
+
+def load_locked(path: str) -> set:
+    """Programs verified by hand against the filings (symbol, start, end); the sync never rewrites them."""
+    if not os.path.exists(path):
+        return set()
+    with open(path) as f:
+        return {_lock_key(x["symbol"], x["mandate"]) for x in json.load(f)}
+
+
+def plan_rows(programs: list[dict], existing: list[dict] | None, known_symbols: set | None,
+              locked: set | None = None) -> list[dict]:
     """Decide, per program, the final row and whether it inserts or updates an existing row."""
     plans = []
     for p in sorted(programs, key=lambda p: (p["symbol"], p["start"] or date.min)):
@@ -257,6 +278,10 @@ def plan_rows(programs: list[dict], existing: list[dict] | None, known_symbols: 
         old = None
         if existing is not None:
             match = _match_existing(row, p["start_inferred"], existing)
+            if match is not None and _lock_key(match["symbol"], match["mandate"]) in (locked or ()):
+                plans.append({"row": {**row, "mandate": match["mandate"]}, "old_mandate": match["mandate"],
+                              "action": "locked", "warnings": [], "program": p, "locked": True})
+                continue
             if match is not None:
                 old = match["mandate"]
                 xs, xe = _mandate_dates(old)
@@ -264,7 +289,11 @@ def plan_rows(programs: list[dict], existing: list[dict] | None, known_symbols: 
                 # Our dates win when they come from the documents; fill gaps from the DB
                 if p["start_inferred"] or s is None:
                     s = xs
-                e = e or xe
+                # Only a plan, its update or a termination defines the period end; a progress report's
+                # end is its reporting cut-off (e.g. "19 May - 30 Jun 2026"), so the DB end is kept
+                defines_end = any(src.get("doc_type") in ("plan", "plan_update", "termination")
+                                  for src in p["sources"])
+                e = (e or xe) if defines_end else (xe or e)
                 row["mandate"] = {"start_date": s.isoformat() if s else None,
                                   "end_date": e.isoformat() if e else None}
                 _keep_existing_values(row, match)
@@ -293,7 +322,7 @@ def plan_rows(programs: list[dict], existing: list[dict] | None, known_symbols: 
     # Flag programs of the same symbol whose periods overlap (e.g. cumulative multi-program reports)
     for a in plans:
         for b in plans:
-            if a is b or a["row"]["symbol"] != b["row"]["symbol"]:
+            if a is b or a["row"]["symbol"] != b["row"]["symbol"] or a.get("locked") or b.get("locked"):
                 continue
             (as_, ae), (bs, be) = _mandate_dates(a["row"]["mandate"]), _mandate_dates(b["row"]["mandate"])
             if as_ and bs and as_ < (be or date.max) and bs < (ae or date.max):

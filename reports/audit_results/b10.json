@@ -1,0 +1,178 @@
+{"batch": "b10", "symbols": [
+  {"symbol": "AMMN",
+   "programs": [],
+   "unmatched_db_rows": [],
+   "not_a_buyback": "Only buyback program was the fluctuating-market buyback 30 Apr 2025 - 31 Jul 2025 (105,803,800 shares, Rp788,287,796,030 per 2026-04-10 disclosure att p.1), which ended in 2025 (out of scope). The 2026-04-10 and 2026-05-13 filings concern transfer of treasury shares (ESOP/MSOP), not a buyback. No DB row; nothing to add."},
+
+  {"symbol": "BBMD",
+   "programs": [
+     {"start_date": "2025-06-20", "end_date": "2026-06-20", "regime": "gms",
+      "allocated_fund": 631268384, "max_shares": null,
+      "reported_shares": null, "reported_spent": null, "reported_as_of": null,
+      "status": "ended",
+      "sources": ["2025-05-09 Submission of Disclosure of Information on Share Buyback Plan (att 01 ID / 02 EN: period 20 Jun 2025 - 20 Jun 2026, Rp631.268.384, GMS 19 Jun 2025)"],
+      "db_row": null,
+      "verdict": "missing",
+      "corrections": {},
+      "notes": "Variable-remuneration buyback (POJK 29/2023) funded from 2024 bonuses; period overlaps 2026. GMS approval (19 Jun 2025) and any realization not evidenced in local filings; no progress reports found."},
+     {"start_date": "2026-06-10", "end_date": "2027-06-10", "regime": "gms",
+      "allocated_fund": 40044620, "max_shares": null,
+      "reported_shares": null, "reported_spent": null, "reported_as_of": null,
+      "status": "active",
+      "sources": ["2026-04-30 Disclosure of Information on Share Buyback Plan (att 13 EN / 14 ID: period 10 Jun 2026 - 10 Jun 2027, Rp40.044.620, GMS 9 Jun 2026)"],
+      "db_row": {"start_date": "2026-06-10", "end_date": "2027-06-10"},
+      "verdict": "verified",
+      "corrections": {},
+      "notes": "Dates and allocated fund match. utilized 0 / accumulated 0 consistent with registry (change 0 as of 2026-06-30). GMS approval not separately evidenced in local filings."}
+   ],
+   "unmatched_db_rows": []},
+
+  {"symbol": "BREN",
+   "programs": [
+     {"start_date": "2026-02-04", "end_date": "2026-04-01", "regime": "fluctuating",
+      "allocated_fund": 2000000000000, "max_shares": null,
+      "reported_shares": null, "reported_spent": null, "reported_as_of": null,
+      "status": "terminated",
+      "sources": ["2026-02-03 Information Disclosure plan to buyback shares (att p.3/p.7: period 4 Feb 2026 - 3 May 2026, max Rp2.000.000.000.000)", "2026-03-30 Acceleration of the termination of BREN's share buyback period (att p.1: end moved from 3 May 2026 to 1 Apr 2026)"],
+      "db_row": {"start_date": "2026-02-04", "end_date": "2026-04-01"},
+      "verdict": "verified",
+      "corrections": {},
+      "notes": "No realization totals published in local filings; DB utilized 0 / accumulated 0 not contradicted (registry null). 2025-03-21 plan ended in 2025 (out of scope)."}
+   ],
+   "unmatched_db_rows": []},
+
+  {"symbol": "CHEK",
+   "programs": [
+     {"start_date": "2026-06-18", "end_date": "2026-09-18", "regime": "fluctuating",
+      "allocated_fund": 15000000000, "max_shares": 80000000,
+      "reported_shares": 80000000, "reported_spent": 11987865437, "reported_as_of": "2026-09-18",
+      "status": "ended",
+      "sources": ["2026-06-17 Disclosure of Information Regarding Share Buyback Plans (att p.1/p.3: 18 Jun - 18 Sep 2026, max Rp15.000.000.000, max 80.000.000 shares)", "2026-09-18 Report on Realization and Completion of the 2026 Share Buyback (att p.2: 80.000.000 shares, 1,94%, Rp11.987.865.437 funds used, avg Rp140,95; att p.5 trade table)"],
+      "db_row": null,
+      "verdict": "missing",
+      "corrections": {},
+      "notes": "Max shares reached; trades 18 Jun 2026 79,700,000 @141; 22 Jun 2026 87,500 @128; 23 Jun 2026 212,500 @127,47. Trade table nominal sum Rp11.970.160.510 (excl. costs) vs Rp11.987.865.437 total funds in letter. Completion report dated 18 Sep 2026 (scheduled period end)."}
+   ],
+   "unmatched_db_rows": []},
+
+  {"symbol": "CUAN",
+   "programs": [
+     {"start_date": "2026-02-04", "end_date": "2026-03-11", "regime": "fluctuating",
+      "allocated_fund": 750000000000, "max_shares": null,
+      "reported_shares": null, "reported_spent": null, "reported_as_of": null,
+      "status": "terminated",
+      "sources": ["2026-02-03 Disclosure of Information regarding Plan to Conduct a Share Buyback (att 11: period 4 Feb 2026 - 3 May 2026, max Rp750.000.000.000)", "2026-03-11 Plan to accelerate the end of share buyback period (att p.2: end moved from 3 May 2026 to 11 Mar 2026)"],
+      "db_row": {"start_date": "2026-02-04", "end_date": "2026-03-11"},
+      "verdict": "verified",
+      "corrections": {},
+      "notes": "No realization totals in local filings; DB zeros not contradicted. 2025-03-21 plan ended in 2025 (out of scope). Cover letter att 12 is misdated 'Februari 2025' but belongs to 2026 plan."}
+   ],
+   "unmatched_db_rows": []},
+
+  {"symbol": "HYGN",
+   "programs": [
+     {"start_date": "2026-02-13", "end_date": "2026-05-13", "regime": "fluctuating",
+      "allocated_fund": 5000000000, "max_shares": null,
+      "reported_shares": null, "reported_spent": null, "reported_as_of": null,
+      "status": "ended",
+      "sources": ["2026-02-13 Pembelian Kembali Saham dalam Kondisi Pasar Berfluktuasi Secara Signifikan (att 11: 13 Feb 2026 - 13 May 2026, max Rp5.000.000.000)"],
+      "db_row": {"start_date": "2026-02-13", "end_date": "2026-05-13"},
+      "verdict": "verified",
+      "corrections": {},
+      "notes": "Pro forma assumes 38,461,539 shares but no stated maximum share count. No realization report in local filings. 2025-04-15 plan ended 15 Jul 2025 (out of scope)."}
+   ],
+   "unmatched_db_rows": []},
+
+  {"symbol": "KLBF",
+   "programs": [
+     {"start_date": "2025-12-16", "end_date": "2026-03-15", "regime": "fluctuating",
+      "allocated_fund": 250000000000, "max_shares": null,
+      "reported_shares": null, "reported_spent": null, "reported_as_of": null,
+      "status": "ended",
+      "sources": ["2025-12-12 Share Buyback Plan in Significantly Fluctuating Market Conditions (att 21: period 16 Dec 2025 - 15 Mar 2026, max Rp250.000.000.000)"],
+      "db_row": null,
+      "verdict": "missing",
+      "corrections": {},
+      "notes": "Overlaps 2026, no DB row. No realization totals in local filings."},
+     {"start_date": "2026-04-02", "end_date": "2026-07-02", "regime": "fluctuating",
+      "allocated_fund": 500000000000, "max_shares": null,
+      "reported_shares": null, "reported_spent": null, "reported_as_of": null,
+      "status": "ended",
+      "sources": ["2026-04-01 Share Buyback Plan in Significantly Fluctuating Market Conditions (att 31: 2 Apr 2026 - 2 Jul 2026, max Rp500.000.000.000)"],
+      "db_row": {"start_date": "2026-04-02", "end_date": "2026-07-02"},
+      "verdict": "verified",
+      "corrections": {},
+      "notes": "No realization totals in local filings; DB zeros not contradicted (registry null)."},
+     {"start_date": "2026-09-17", "end_date": "2026-12-17", "regime": "fluctuating",
+      "allocated_fund": 500000000000, "max_shares": null,
+      "reported_shares": null, "reported_spent": null, "reported_as_of": null,
+      "status": "active",
+      "sources": ["2026-09-16 Share Buyback Plan in Significantly Fluctuating Market Conditions (att 61 p.1-3: 17 Sep 2026 - 17 Dec 2026, max Rp500.000.000.000)", "2026-09-15 Cancellation of Share Buyback Plan (CORRECTION) of the 2026-09-15 announcement 066/CSEC-KF/IX-2026"],
+      "db_row": {"start_date": "2026-09-17", "end_date": "2026-12-17"},
+      "verdict": "verified",
+      "corrections": {},
+      "notes": "15 Sep 2026 plan was cancelled same day and reissued 16 Sep 2026 (same program). accumulated 55,543,300 is registry-derived (Sep 2026 change), no filing contradicts. 2025-05-02 and 2025-09-02 plans ended in 2025 (out of scope)."}
+   ],
+   "unmatched_db_rows": []},
+
+  {"symbol": "MEDC",
+   "programs": [
+     {"start_date": "2025-06-04", "end_date": "2026-06-03", "regime": "gms",
+      "allocated_fund": 408000000000, "max_shares": 240000000,
+      "reported_shares": 0, "reported_spent": null, "reported_as_of": "2026-03-31",
+      "status": "ended",
+      "sources": ["2025-04-22 Disclosure of Information Regarding the Buyback of Shares (att 41: period 4 Jun 2025 - 3 Jun 2026, max Rp408 miliar / USD25 juta, max 240.000.000 shares)", "2025-09-04 Phase II disclosure (att 51 p.4: approved at RUPST 3 Jun 2025, 12-month period; not yet executed as of 4 Sep 2025)", "2026-04-28 Disclosure on transfer of shares (att 62 p.4-5: treasury 455,609,908 as of 31 Mar 2026 = 2024 buyback + Phase I + Phase II only)"],
+      "db_row": null,
+      "verdict": "missing",
+      "corrections": {},
+      "notes": "GMS-approved program overlapping 2026. reported_shares 0 is inferred: 31 Mar 2026 treasury breakdown contains no shares from this program. Fluctuating Phase I (25 Mar-25 Jun 2025) and Phase II (8 Sep-8 Dec 2025) ended in 2025 (out of scope)."}
+   ],
+   "unmatched_db_rows": []},
+
+  {"symbol": "PBSA",
+   "programs": [
+     {"start_date": "2026-02-03", "end_date": "2026-03-17", "regime": "fluctuating",
+      "allocated_fund": 100000000000, "max_shares": null,
+      "reported_shares": null, "reported_spent": null, "reported_as_of": null,
+      "status": "ended",
+      "sources": ["2026-02-02 Plan to Conduct a Share Buyback (att 00)", "2026-02-03 Plan to Conduct a Share Buyback (CORRECTION) (att 11: 3 Feb 2026 - 17 Mar 2026, max Rp100.000.000.000; correction adds broker BCA Sekuritas)"],
+      "db_row": {"start_date": "2026-02-03", "end_date": "2026-03-17"},
+      "verdict": "verified",
+      "corrections": {},
+      "notes": "No realization totals in local filings; DB zeros not contradicted."}
+   ],
+   "unmatched_db_rows": []},
+
+  {"symbol": "RAJA",
+   "programs": [
+     {"start_date": "2026-01-29", "end_date": "2026-04-28", "regime": "fluctuating",
+      "allocated_fund": 250000000000, "max_shares": null,
+      "reported_shares": null, "reported_spent": null, "reported_as_of": null,
+      "status": "ended",
+      "sources": ["2026-01-28 plan (att 01: 28 Jan 2026 - 28 Apr 2028 typo)", "2026-01-29 05:36 CORRECTION (att 11: 29 Jan 2026 - 28 Apr 2028 typo)", "2026-01-29 10:24 CORRECTION (att 21: 29 Jan 2026 - 28 Apr 2026, max Rp250.000.000.000)"],
+      "db_row": {"start_date": "2026-01-29", "end_date": "2026-04-28"},
+      "verdict": "verified",
+      "corrections": {},
+      "notes": "Final correction fixes start date and 2028 typo. No realization totals in local filings."}
+   ],
+   "unmatched_db_rows": []},
+
+  {"symbol": "SMGR",
+   "programs": [
+     {"start_date": "2025-05-24", "end_date": "2026-05-23", "regime": "gms",
+      "allocated_fund": 300000000000, "max_shares": null,
+      "reported_shares": null, "reported_spent": null, "reported_as_of": null,
+      "status": "ended",
+      "sources": ["2025-05-02 Disclosure of Information Regarding the Share Buyback Plan and the Transfer of Treasury Shares (CORRECTION) (att 51 EN: GMS 23 May 2025, period 24 May 2025 - 23 May 2026, max IDR300,000,000,000 incl. the IDR200bn fluctuating allocation)"],
+      "db_row": null,
+      "verdict": "uncertain",
+      "corrections": {},
+      "notes": "Plan overlaps 2026 but no local filing confirms GMS approval on 23 May 2025 or any execution/progress report. Add as missing only if approval is confirmed. Fluctuating program 16 Apr - 23 May 2025 (Rp200bn) ended in 2025 (out of scope)."}
+   ],
+   "unmatched_db_rows": []},
+
+  {"symbol": "TBLA",
+   "programs": [],
+   "unmatched_db_rows": [],
+   "not_a_buyback": "Only program: fluctuating-market buyback 14 Apr 2025 - 13 Jul 2025, max Rp200 miliar / 300,000,000 shares (2025-04-14 att p.3, p.5-6); ended in 2025, out of scope. No DB row."}
+]}
