@@ -3,7 +3,8 @@ name: Daily Buyback Check
 on:
   schedule:
     # Every day at 10:00 UTC (17:00 WIB)
-    - cron: "0 10 * * *"
+    # Failure emails go to whoever last changed this line (GitHub rule), so edit it to take them over
+    - cron: "0 10 * * 0-6"
   workflow_dispatch:
     inputs:
       since:

@@ -50,7 +50,8 @@ def main():
     announcements = fetch_buyback_announcements(since.replace("-", ""), args.until.replace("-", ""))
     print(f"  {len(announcements)} candidate announcements")
 
-    cache = extract_all(announcements, args.pdf_dir, CACHE_PATH)
+    provider_failures: list[str] = []
+    cache = extract_all(announcements, args.pdf_dir, CACHE_PATH, failures=provider_failures)
     # Extractions not yet written to the DB (new, re-extracted, or skipped/dry-run on an earlier run)
     pending = {k for k, v in cache.items() if v.get("synced") is False}
 
@@ -80,6 +81,7 @@ def main():
         for pl in targets:
             print(f"  would {pl['action']}: {pl['row']['symbol']} {pl['row']['mandate']}")
         print(f"  dry run: {len(targets)} rows would be written")
+        _fail_loudly(provider_failures, [])
         return
 
     errors = upsert(targets)
@@ -97,6 +99,19 @@ def main():
     for k in done & pending:
         cache[k]["synced"] = True
     save_cache(cache, CACHE_PATH)
+    _fail_loudly(provider_failures, errors)
+
+
+def _fail_loudly(provider_failures: list[str], write_errors: list[str]):
+    """Exit non-zero after the run has synced what it could, so the GitHub job turns red and emails."""
+    problems = []
+    if provider_failures:
+        problems.append(f"{len(provider_failures)} document(s) not extracted, OpenRouter refused the "
+                        f"account or key (out of credit?): {provider_failures[0]}")
+    if write_errors:
+        problems.append(f"{len(write_errors)} row(s) not written to Supabase: {write_errors[0]}")
+    if problems:
+        raise SystemExit("FAILED: " + " | ".join(problems))
 
 
 if __name__ == "__main__":
