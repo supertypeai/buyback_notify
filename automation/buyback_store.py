@@ -12,6 +12,8 @@ from datetime import date, datetime, timedelta, timezone
 import requests
 
 TABLE = "idx_buybacks"
+# Earliest end date for which the sync may insert a new program
+INSERT_FROM = os.getenv("BUYBACK_INSERT_FROM", "2026-01-01")
 _MATCH_SLACK = timedelta(days=14)
 
 
@@ -121,8 +123,10 @@ def build_programs(cache: dict) -> list[dict]:
             elif prog["start"] is None:
                 # Program began before our window: provisional start from the report itself
                 prog["start"], prog["start_inferred"] = _interval(ex, published)[0], True
-            # Termination / final reports may shorten the period
-            if end and (prog["end"] is None or ex.get("doc_type") == "termination"):
+            # A termination sets the actual end; a final report may fill a missing one. A progress
+            # report's end is only its reporting cut-off (e.g. "19 May - 30 Jun 2026"), never the period.
+            if end and (ex.get("doc_type") == "termination"
+                        or (prog["end"] is None and ex.get("doc_type") == "final_report")):
                 prog["end"] = end
         prog["allocated"] = _num(ex.get("allocated_fund")) or prog["allocated"]
         prog["max_shares"] = _num(ex.get("max_shares")) or prog["max_shares"]
@@ -286,9 +290,11 @@ def plan_rows(programs: list[dict], existing: list[dict] | None, known_symbols: 
                 old = match["mandate"]
                 xs, xe = _mandate_dates(old)
                 s, e = _mandate_dates(row["mandate"])
-                # Our dates win when they come from the documents; fill gaps from the DB
-                if p["start_inferred"] or s is None:
-                    s = xs
+                # The DB start stands unless a plan correction restates it; models often pick a nearby
+                # date instead (the GMS-minutes filing date, the day after disclosure)
+                if p["start_inferred"] or s is None or not any(
+                        src.get("doc_type") == "plan_update" for src in p["sources"]):
+                    s = xs or s
                 # Only a plan, its update or a termination defines the period end; a progress report's
                 # end is its reporting cut-off (e.g. "19 May - 30 Jun 2026"), so the DB end is kept
                 defines_end = any(src.get("doc_type") in ("plan", "plan_update", "termination")
@@ -309,6 +315,22 @@ def plan_rows(programs: list[dict], existing: list[dict] | None, known_symbols: 
             warnings.append("mandate period incomplete - not upserted")
         if known_symbols is not None and row["symbol"] not in known_symbols:
             warnings.append("symbol not in idx_company_profile - not upserted")
+        if old is None:
+            # New rows only for programs still relevant (ending on/after INSERT_FROM) with a stated budget;
+            # older programs come from multi-period recaps and were never verified
+            end = row["mandate"]["end_date"]
+            if end and end < INSERT_FROM:
+                warnings.append(f"program ended before {INSERT_FROM} - not inserted")
+            if not row["company_fund"][0].get("allocated_fund"):
+                warnings.append("no allocated_fund for a new program - not inserted")
+            # A program can't run alongside one already stored (POJK 29 Art. 15), so an overlap means an
+            # extension or a duplicate of the stored row
+            s, e = _mandate_dates(row["mandate"])
+            for x in existing or []:
+                xs, xe = _mandate_dates(x["mandate"])
+                if x["symbol"] == row["symbol"] and s and xs and s <= (xe or date.max) and xs <= (e or date.max):
+                    warnings.append(f"overlaps stored {xs}..{xe} - review")
+                    break
 
         if old is None:
             action = "insert"

@@ -2,260 +2,547 @@
  {
   "symbol": "AADI.JK",
   "mandate": {
-   "start_date": "2025-05-23",
-   "end_date": "2026-05-22"
+   "end_date": "2026-05-22",
+   "start_date": "2025-05-23"
   }
  },
  {
   "symbol": "ADRO.JK",
   "mandate": {
-   "start_date": "2025-06-03",
-   "end_date": "2026-04-16"
+   "end_date": "2026-04-16",
+   "start_date": "2025-06-03"
   }
  },
  {
   "symbol": "AGRO.JK",
   "mandate": {
-   "start_date": "2025-06-25",
-   "end_date": "2026-06-25"
+   "end_date": "2026-06-25",
+   "start_date": "2025-06-25"
   }
  },
  {
   "symbol": "ALDO.JK",
   "mandate": {
-   "start_date": "2025-06-12",
-   "end_date": "2026-06-11"
+   "end_date": "2026-06-11",
+   "start_date": "2025-06-12"
   }
  },
  {
   "symbol": "AMAG.JK",
   "mandate": {
-   "start_date": "2025-10-23",
-   "end_date": "2026-01-23"
+   "end_date": "2026-01-23",
+   "start_date": "2025-10-23"
   }
  },
  {
   "symbol": "AMAG.JK",
   "mandate": {
-   "start_date": "2026-01-26",
-   "end_date": "2026-04-26"
+   "end_date": "2026-04-26",
+   "start_date": "2026-01-26"
   }
  },
  {
   "symbol": "AMOR.JK",
   "mandate": {
-   "start_date": "2025-05-22",
-   "end_date": "2026-01-28"
+   "end_date": "2026-01-28",
+   "start_date": "2025-05-22"
+  }
+ },
+ {
+  "symbol": "AMOR.JK",
+  "mandate": {
+   "end_date": "2026-04-30",
+   "start_date": "2026-01-30"
+  }
+ },
+ {
+  "symbol": "AMOR.JK",
+  "mandate": {
+   "end_date": "2026-07-31",
+   "start_date": "2026-05-01"
+  }
+ },
+ {
+  "symbol": "AMRT.JK",
+  "mandate": {
+   "end_date": "2026-03-06",
+   "start_date": "2025-12-08"
+  }
+ },
+ {
+  "symbol": "ARNA.JK",
+  "mandate": {
+   "end_date": "2026-01-23",
+   "start_date": "2025-10-24"
   }
  },
  {
   "symbol": "ASII.JK",
   "mandate": {
-   "start_date": "2025-11-03",
-   "end_date": "2026-01-13"
+   "end_date": "2026-01-13",
+   "start_date": "2025-11-03"
+  }
+ },
+ {
+  "symbol": "ASII.JK",
+  "mandate": {
+   "end_date": "2026-02-25",
+   "start_date": "2026-01-19"
+  }
+ },
+ {
+  "symbol": "ASII.JK",
+  "mandate": {
+   "end_date": "2026-06-15",
+   "start_date": "2026-03-16"
   }
  },
  {
   "symbol": "ASLC.JK",
   "mandate": {
-   "start_date": "2025-06-18",
-   "end_date": "2026-05-12"
+   "end_date": "2026-05-12",
+   "start_date": "2025-06-18"
   }
  },
  {
   "symbol": "AVIA.JK",
   "mandate": {
-   "start_date": "2025-04-10",
-   "end_date": "2026-04-10"
+   "end_date": "2026-04-10",
+   "start_date": "2025-04-10"
   }
  },
  {
   "symbol": "BBCA.JK",
   "mandate": {
-   "start_date": "2025-10-22",
-   "end_date": "2026-01-19"
+   "end_date": "2026-01-19",
+   "start_date": "2025-10-22"
   }
  },
  {
   "symbol": "BBHI.JK",
   "mandate": {
-   "start_date": "2025-10-30",
-   "end_date": "2026-01-29"
+   "end_date": "2026-01-29",
+   "start_date": "2025-10-30"
+  }
+ },
+ {
+  "symbol": "BBHI.JK",
+  "mandate": {
+   "end_date": "2026-04-29",
+   "start_date": "2026-01-30"
+  }
+ },
+ {
+  "symbol": "BBHI.JK",
+  "mandate": {
+   "end_date": "2026-09-01",
+   "start_date": "2026-07-01"
   }
  },
  {
   "symbol": "BBNI.JK",
   "mandate": {
-   "start_date": "2025-03-26",
-   "end_date": "2026-02-20"
+   "end_date": "2026-02-20",
+   "start_date": "2025-03-26"
   }
  },
  {
   "symbol": "BBNI.JK",
   "mandate": {
-   "start_date": "2026-03-09",
-   "end_date": "2026-07-06"
+   "end_date": "2026-07-06",
+   "start_date": "2026-03-09"
+  }
+ },
+ {
+  "symbol": "BBRI.JK",
+  "mandate": {
+   "end_date": "2026-09-11",
+   "start_date": "2026-06-12"
   }
  },
  {
   "symbol": "BEEF.JK",
   "mandate": {
-   "start_date": "2026-05-19",
-   "end_date": "2026-08-18"
+   "end_date": "2026-08-18",
+   "start_date": "2026-05-19"
+  }
+ },
+ {
+  "symbol": "BFIN.JK",
+  "mandate": {
+   "end_date": "2026-03-17",
+   "start_date": "2026-02-23"
+  }
+ },
+ {
+  "symbol": "BREN.JK",
+  "mandate": {
+   "end_date": "2026-04-01",
+   "start_date": "2026-02-04"
+  }
+ },
+ {
+  "symbol": "BRPT.JK",
+  "mandate": {
+   "end_date": "2026-05-03",
+   "start_date": "2026-02-04"
   }
  },
  {
   "symbol": "BUKA.JK",
   "mandate": {
-   "start_date": "2025-10-30",
-   "end_date": "2026-01-29"
+   "end_date": "2026-01-29",
+   "start_date": "2025-10-30"
+  }
+ },
+ {
+  "symbol": "BUKA.JK",
+  "mandate": {
+   "end_date": "2026-05-08",
+   "start_date": "2026-02-09"
+  }
+ },
+ {
+  "symbol": "CBDK.JK",
+  "mandate": {
+   "end_date": "2026-05-02",
+   "start_date": "2026-02-03"
+  }
+ },
+ {
+  "symbol": "CBDK.JK",
+  "mandate": {
+   "end_date": "2026-08-19",
+   "start_date": "2026-05-20"
+  }
+ },
+ {
+  "symbol": "CDIA.JK",
+  "mandate": {
+   "end_date": "2026-05-05",
+   "start_date": "2026-02-06"
   }
  },
  {
   "symbol": "CHEK.JK",
   "mandate": {
-   "start_date": "2026-06-18",
-   "end_date": "2026-09-18"
+   "end_date": "2026-09-18",
+   "start_date": "2026-06-18"
   }
  },
  {
   "symbol": "CNMA.JK",
   "mandate": {
-   "start_date": "2025-03-24",
-   "end_date": "2026-02-20"
+   "end_date": "2026-02-20",
+   "start_date": "2025-03-24"
+  }
+ },
+ {
+  "symbol": "CUAN.JK",
+  "mandate": {
+   "end_date": "2026-03-11",
+   "start_date": "2026-02-04"
   }
  },
  {
   "symbol": "DEWA.JK",
   "mandate": {
-   "start_date": "2025-11-19",
-   "end_date": "2026-02-13"
+   "end_date": "2026-02-13",
+   "start_date": "2025-11-19"
   }
  },
  {
   "symbol": "ERAA.JK",
   "mandate": {
-   "start_date": "2026-06-02",
-   "end_date": "2026-09-02"
+   "end_date": "2026-04-23",
+   "start_date": "2026-01-23"
+  }
+ },
+ {
+  "symbol": "ERAA.JK",
+  "mandate": {
+   "end_date": "2026-09-02",
+   "start_date": "2026-06-02"
   }
  },
  {
   "symbol": "GEMA.JK",
   "mandate": {
-   "start_date": "2025-12-12",
-   "end_date": "2026-03-12"
+   "end_date": "2026-03-12",
+   "start_date": "2025-12-12"
+  }
+ },
+ {
+  "symbol": "GEMA.JK",
+  "mandate": {
+   "end_date": "2026-06-17",
+   "start_date": "2026-03-17"
   }
  },
  {
   "symbol": "GOTO.JK",
   "mandate": {
-   "start_date": "2025-06-19",
-   "end_date": "2026-06-18"
+   "end_date": "2026-06-18",
+   "start_date": "2025-06-19"
+  }
+ },
+ {
+  "symbol": "HEAL.JK",
+  "mandate": {
+   "end_date": "2026-04-30",
+   "start_date": "2026-01-30"
   }
  },
  {
   "symbol": "HRUM.JK",
   "mandate": {
-   "start_date": "2025-10-06",
-   "end_date": "2026-01-02"
+   "end_date": "2026-01-02",
+   "start_date": "2025-10-06"
+  }
+ },
+ {
+  "symbol": "HRUM.JK",
+  "mandate": {
+   "end_date": "2026-03-17",
+   "start_date": "2026-01-05"
+  }
+ },
+ {
+  "symbol": "HYGN.JK",
+  "mandate": {
+   "end_date": "2026-05-13",
+   "start_date": "2026-02-13"
+  }
+ },
+ {
+  "symbol": "IMPC.JK",
+  "mandate": {
+   "end_date": "2026-05-02",
+   "start_date": "2026-02-03"
+  }
+ },
+ {
+  "symbol": "INTP.JK",
+  "mandate": {
+   "end_date": "2026-04-07",
+   "start_date": "2025-05-22"
   }
  },
  {
   "symbol": "ISSP.JK",
   "mandate": {
-   "start_date": "2026-05-25",
-   "end_date": "2026-08-25"
+   "end_date": "2026-08-25",
+   "start_date": "2026-05-25"
   }
  },
  {
   "symbol": "JATI.JK",
   "mandate": {
-   "start_date": "2026-03-09",
-   "end_date": "2026-06-08"
+   "end_date": "2026-06-08",
+   "start_date": "2026-03-09"
   }
  },
  {
   "symbol": "JATI.JK",
   "mandate": {
-   "start_date": "2026-06-26",
-   "end_date": "2026-09-25"
+   "end_date": "2026-09-25",
+   "start_date": "2026-06-26"
   }
  },
  {
   "symbol": "JRPT.JK",
   "mandate": {
-   "start_date": "2025-10-13",
-   "end_date": "2026-01-12"
+   "end_date": "2026-01-12",
+   "start_date": "2025-10-13"
+  }
+ },
+ {
+  "symbol": "JRPT.JK",
+  "mandate": {
+   "end_date": "2026-04-13",
+   "start_date": "2026-01-14"
   }
  },
  {
   "symbol": "JTPE.JK",
   "mandate": {
-   "start_date": "2025-12-15",
-   "end_date": "2026-03-06"
+   "end_date": "2026-03-06",
+   "start_date": "2025-12-15"
   }
  },
  {
   "symbol": "KLBF.JK",
   "mandate": {
-   "start_date": "2025-12-16",
-   "end_date": "2026-03-15"
+   "end_date": "2026-03-15",
+   "start_date": "2025-12-16"
+  }
+ },
+ {
+  "symbol": "KLBF.JK",
+  "mandate": {
+   "end_date": "2026-07-02",
+   "start_date": "2026-04-02"
   }
  },
  {
   "symbol": "KREN.JK",
   "mandate": {
-   "start_date": "2025-06-16",
-   "end_date": "2026-06-16"
+   "end_date": "2026-06-16",
+   "start_date": "2025-06-16"
   }
  },
  {
   "symbol": "MAHA.JK",
   "mandate": {
-   "start_date": "2025-10-23",
-   "end_date": "2026-03-16"
+   "end_date": "2026-03-16",
+   "start_date": "2025-10-23"
+  }
+ },
+ {
+  "symbol": "MBMA.JK",
+  "mandate": {
+   "end_date": "2026-06-16",
+   "start_date": "2026-03-17"
+  }
+ },
+ {
+  "symbol": "MBMA.JK",
+  "mandate": {
+   "end_date": "2026-09-16",
+   "start_date": "2026-06-17"
   }
  },
  {
   "symbol": "MEDC.JK",
   "mandate": {
-   "start_date": "2025-06-04",
-   "end_date": "2026-06-03"
+   "end_date": "2026-06-03",
+   "start_date": "2025-06-04"
+  }
+ },
+ {
+  "symbol": "MIKA.JK",
+  "mandate": {
+   "end_date": "2026-06-07",
+   "start_date": "2026-03-07"
   }
  },
  {
   "symbol": "MYOR.JK",
   "mandate": {
-   "start_date": "2025-06-11",
-   "end_date": "2026-05-29"
+   "end_date": "2026-05-29",
+   "start_date": "2025-06-11"
   }
  },
  {
   "symbol": "NCKL.JK",
   "mandate": {
-   "start_date": "2025-06-19",
-   "end_date": "2026-06-18"
+   "end_date": "2026-06-18",
+   "start_date": "2025-06-19"
+  }
+ },
+ {
+  "symbol": "NOBU.JK",
+  "mandate": {
+   "end_date": "2026-06-08",
+   "start_date": "2026-03-09"
+  }
+ },
+ {
+  "symbol": "PBSA.JK",
+  "mandate": {
+   "end_date": "2026-03-17",
+   "start_date": "2026-02-03"
+  }
+ },
+ {
+  "symbol": "RAJA.JK",
+  "mandate": {
+   "end_date": "2026-04-28",
+   "start_date": "2026-01-29"
+  }
+ },
+ {
+  "symbol": "RMKE.JK",
+  "mandate": {
+   "end_date": "2026-05-01",
+   "start_date": "2026-02-02"
   }
  },
  {
   "symbol": "TBIG.JK",
   "mandate": {
-   "start_date": "2025-10-30",
-   "end_date": "2026-04-29"
+   "end_date": "2026-04-29",
+   "start_date": "2025-10-30"
   }
  },
  {
   "symbol": "TOBA.JK",
   "mandate": {
-   "start_date": "2025-12-24",
-   "end_date": "2026-03-24"
+   "end_date": "2026-03-24",
+   "start_date": "2025-12-24"
+  }
+ },
+ {
+  "symbol": "TOWR.JK",
+  "mandate": {
+   "end_date": "2026-05-01",
+   "start_date": "2026-02-02"
+  }
+ },
+ {
+  "symbol": "TPIA.JK",
+  "mandate": {
+   "end_date": "2026-05-03",
+   "start_date": "2026-02-04"
+  }
+ },
+ {
+  "symbol": "TRIS.JK",
+  "mandate": {
+   "end_date": "2026-10-05",
+   "start_date": "2026-07-06"
+  }
+ },
+ {
+  "symbol": "UNTR.JK",
+  "mandate": {
+   "end_date": "2026-01-14",
+   "start_date": "2025-10-30"
+  }
+ },
+ {
+  "symbol": "UNTR.JK",
+  "mandate": {
+   "end_date": "2026-03-31",
+   "start_date": "2026-01-22"
+  }
+ },
+ {
+  "symbol": "UNTR.JK",
+  "mandate": {
+   "end_date": "2026-06-30",
+   "start_date": "2026-04-01"
+  }
+ },
+ {
+  "symbol": "UNTR.JK",
+  "mandate": {
+   "end_date": "2026-09-30",
+   "start_date": "2026-07-01"
+  }
+ },
+ {
+  "symbol": "UVCR.JK",
+  "mandate": {
+   "end_date": "2026-09-11",
+   "start_date": "2026-06-11"
   }
  },
  {
   "symbol": "WINS.JK",
   "mandate": {
-   "start_date": "2025-06-04",
-   "end_date": "2026-03-31"
+   "end_date": "2026-03-31",
+   "start_date": "2025-06-04"
   }
  }
 ]
