@@ -273,8 +273,16 @@ def load_locked(path: str) -> set:
         return {_lock_key(x["symbol"], x["mandate"]) for x in json.load(f)}
 
 
+def load_held(path: str) -> dict:
+    """Programs not to insert until a filing confirms them: (symbol, start_date) -> reason."""
+    if not os.path.exists(path):
+        return {}
+    with open(path) as f:
+        return {(x["symbol"], x["start_date"]): x["reason"] for x in json.load(f)}
+
+
 def plan_rows(programs: list[dict], existing: list[dict] | None, known_symbols: set | None,
-              locked: set | None = None) -> list[dict]:
+              locked: set | None = None, held: dict | None = None) -> list[dict]:
     """Decide, per program, the final row and whether it inserts or updates an existing row."""
     plans = []
     for p in sorted(programs, key=lambda p: (p["symbol"], p["start"] or date.min)):
@@ -323,6 +331,12 @@ def plan_rows(programs: list[dict], existing: list[dict] | None, known_symbols: 
                 warnings.append(f"program ended before {INSERT_FROM} - not inserted")
             if not row["company_fund"][0].get("allocated_fund"):
                 warnings.append("no allocated_fund for a new program - not inserted")
+            reason = (held or {}).get((row["symbol"], row["mandate"]["start_date"]))
+            # Released automatically once a report or termination dated on/after the start confirms it ran
+            confirmed = any(src.get("doc_type") in ("progress_report", "final_report", "termination")
+                            and src["date"] >= row["mandate"]["start_date"] for src in p["sources"])
+            if reason and not confirmed:
+                warnings.append(f"held: {reason}")
             # A program can't run alongside one already stored (POJK 29 Art. 15), so an overlap means an
             # extension or a duplicate of the stored row
             s, e = _mandate_dates(row["mandate"])
