@@ -332,7 +332,10 @@ def plan_rows(programs: list[dict], existing: list[dict] | None, known_symbols: 
             if not row["company_fund"][0].get("allocated_fund"):
                 warnings.append("no allocated_fund for a new program - not inserted")
             reason = (held or {}).get((row["symbol"], row["mandate"]["start_date"]))
-            if reason:
+            # Released automatically once a report or termination dated on/after the start confirms it ran
+            confirmed = any(src.get("doc_type") in ("progress_report", "final_report", "termination")
+                            and src["date"] >= row["mandate"]["start_date"] for src in p["sources"])
+            if reason and not confirmed:
                 warnings.append(f"held: {reason}")
             # A program can't run alongside one already stored (POJK 29 Art. 15), so an overlap means an
             # extension or a duplicate of the stored row
