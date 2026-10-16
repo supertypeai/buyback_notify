@@ -298,14 +298,28 @@ def _chat(model: str, messages: list[dict]) -> tuple[dict, str, float]:
     for attempt in range(2):
         try:
             resp = requests.post(OPENROUTER_URL, json=body, headers=headers, timeout=REQUEST_TIMEOUT)
+            if resp.status_code in ProviderError.STATUSES:
+                # Out of credit / bad or disabled key: retrying can't help, and every document will fail
+                raise ProviderError(resp.status_code, f"{model}: HTTP {resp.status_code} {resp.text[:200]}")
             resp.raise_for_status()
             data = resp.json()
             raw = data["choices"][0]["message"]["content"]
             return _parse_json(raw), raw, float((data.get("usage") or {}).get("cost") or 0)
+        except ProviderError:
+            raise
         except Exception as e:
             last_err = e
             time.sleep(10 * (attempt + 1))
     raise RuntimeError(f"{model}: {last_err}")
+
+
+class ProviderError(RuntimeError):
+    """OpenRouter refused the account or key (no credit, invalid or disabled key). Systemic, not per-document."""
+    STATUSES = (401, 402, 403)
+
+    def __init__(self, status: int, message: str):
+        super().__init__(message)
+        self.status = status
 
 
 def extract_announcement(announcement: dict, pdf_paths: list[str], model: str = OPENROUTER_MODEL,
@@ -350,6 +364,8 @@ def extract_with_guards(announcement: dict, pdf_paths: list[str]) -> dict:
             alt = extract_announcement(announcement, pdf_paths, FALLBACK_MODEL, text=text)
         except Exception as e:  # keep the primary result if the fallback is unavailable
             print(f"  fallback {FALLBACK_MODEL} failed for {announcement['id']}: {e}")
+            if isinstance(e, ProviderError):
+                result["provider_error"] = str(e)
             alt = None
         if alt:
             total = result.get("cost", 0) + alt.get("cost", 0)
@@ -385,8 +401,11 @@ def save_cache(cache: dict, path: str):
 
 
 def extract_all(announcements: list[dict], pdf_dir: str, cache_path: str,
-                workers: int = int(os.getenv("BUYBACK_WORKERS", "8"))) -> dict:
-    """Download + extract every announcement not already in the cache. Returns the full cache."""
+                workers: int = int(os.getenv("BUYBACK_WORKERS", "8")), failures: list | None = None) -> dict:
+    """Download + extract every announcement not already in the cache. Returns the full cache.
+    OpenRouter account/key errors are appended to `failures` so the caller can fail the run after
+    syncing what it could; per-document errors (corrupt PDF, unreadable pages) are only logged."""
+    failures = [] if failures is None else failures
     cache = load_cache(cache_path)
     todo = [a for a in announcements
             if a["id"] not in cache or cache[a["id"]].get("version") != EXTRACTION_VERSION]
@@ -403,9 +422,15 @@ def extract_all(announcements: list[dict], pdf_dir: str, cache_path: str,
         for n, fut in enumerate(as_completed(futures), 1):
             try:
                 a, result = fut.result()
+            except ProviderError as e:
+                print(f"  ! {e}")
+                failures.append(str(e))
+                continue
             except Exception as e:
                 print(f"  ! {e}")
                 continue
+            if result.get("provider_error"):
+                failures.append(result["provider_error"])
             ex = result["extraction"]
             cache[a["id"]] = {
                 "announcement": {k: v for k, v in a.items() if k != "pdf_paths"},

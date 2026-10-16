@@ -307,7 +307,11 @@ def _overlaps(mandate: dict, lo: date, hi: date) -> bool:
     return bool(s and e and s <= hi and e >= lo)
 
 
-def plan_updates(rows: list[dict], include_ended: bool, cache: dict) -> list[dict]:
+def plan_updates(rows: list[dict], include_ended: bool, cache: dict,
+                 fetch_failures: list | None = None) -> list[dict]:
+    """Registry plans for the target programs. Companies IDX wouldn't serve are added to
+    `fetch_failures` (and skipped) so the caller can fail the run after writing the rest."""
+    fetch_failures = [] if fetch_failures is None else fetch_failures
     today = date.today()
     targets = []
     for row in rows:
@@ -335,6 +339,7 @@ def plan_updates(rows: list[dict], include_ended: bool, cache: dict) -> list[dic
             raise
         except Exception as e:
             print(f"  ! {code}: {e}")
+            fetch_failures.append(f"{code}: {e}")
             continue
         time.sleep(2)  # IDX rate-limits bursts of announcement queries
         siblings = [r for r in rows if r["symbol"] == f"{code}.JK"]
@@ -396,8 +401,11 @@ def main():
     if args.symbol:
         rows = [r for r in rows if r["symbol"].removesuffix(".JK") == args.symbol.upper()]
     cache = load_cache(CACHE_PATH)
+    fetch_failures: list[str] = []
     try:
-        plans = plan_updates(rows, args.all, cache)
+        plans = plan_updates(rows, args.all, cache, fetch_failures)
+    except IdxUnreachable as e:
+        raise SystemExit(f"FAILED: {e}")
     finally:
         save_cache(cache, CACHE_PATH)
 
@@ -433,6 +441,16 @@ def main():
         print(f"\nupdated {sum(1 for p in plans if p['registry_updates']) - len(errors)} programs, {len(errors)} errors")
         for e in errors:
             print("   ", e)
+
+    # Exit non-zero after writing what we could, so the GitHub job turns red and emails
+    problems = []
+    if fetch_failures:
+        problems.append(f"IDX would not serve {len(fetch_failures)} compan(ies), so they were not updated: "
+                        f"{fetch_failures[0]}")
+    if errors:
+        problems.append(f"{len(errors)} row(s) not written to Supabase: {errors[0]}")
+    if problems:
+        raise SystemExit("FAILED: " + " | ".join(problems))
 
 
 if __name__ == "__main__":
