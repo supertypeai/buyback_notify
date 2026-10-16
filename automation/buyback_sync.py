@@ -23,12 +23,14 @@ load_dotenv()
 
 from buyback_extract import extract_all, fetch_buyback_announcements, save_cache  # noqa: E402
 from buyback_store import (  # noqa: E402
-    build_programs, fetch_existing, fetch_known_symbols, load_locked, plan_rows, upsert,
+    build_programs, fetch_existing, fetch_known_symbols, load_held, load_locked, plan_rows, upsert,
 )
 
 CACHE_PATH = os.getenv("BUYBACK_CACHE", "data/buyback_extractions.json")
 # Rows verified by hand against the filings; the sync leaves them untouched
 LOCKED_PATH = os.getenv("BUYBACK_LOCKED", "data/locked_programs.json")
+# Programs not inserted until a filing confirms them (remove an entry once confirmed)
+HELD_PATH = os.getenv("BUYBACK_HELD", "data/held_programs.json")
 
 
 def main():
@@ -56,7 +58,7 @@ def main():
     in_window = [p for p in programs if any(s["date"] >= since for s in p["sources"])]
     existing = fetch_existing()
     known = fetch_known_symbols(sorted({f"{p['symbol']}.JK" for p in in_window}))
-    plans = plan_rows(in_window, existing, known, load_locked(LOCKED_PATH))
+    plans = plan_rows(in_window, existing, known, load_locked(LOCKED_PATH), load_held(HELD_PATH))
 
     # A backfill (--since) writes every program; daily runs only those with a pending document
     targets = plans if args.since else [
