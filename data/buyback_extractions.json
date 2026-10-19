@@ -36135,5 +36135,511 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261019010702-049/BP/M-Corps/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261018_BRPT_Laporan Informasi dan Fakta Material_32167218.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/346ff0c9e3_b58dca7152.pdf"
+    },
+    {
+     "filename": "20261018_BRPT_Laporan Informasi dan Fakta Material_32167218_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/61796db20a_9e8be4d143.pdf"
+    },
+    {
+     "filename": "20261018_BRPT_Laporan Informasi dan Fakta Material_32167218_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/a67fa1c6c6_f4cbe93d94.pdf"
+    },
+    {
+     "filename": "20261018_BRPT_Laporan Informasi dan Fakta Material_32167218_lamp3.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/ec470cbba1_b11efb373e.pdf"
+    }
+   ],
+   "id": "20261019010702-049/BP/M-Corps/X/2026_en-us",
+   "publish_date": "2026-10-19T01:07:02",
+   "symbol": "BRPT",
+   "title": "DISCLOSURE OF INFORMATION IN RELATION TO THE PLAN OF PT BARITO PACIFIC TBK (\"COMPANY\") TO BUYBACK ITS SHARES (\"BUYBACK\")"
+  },
+  "cost": 0.00301579,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 1000000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2026-12-31",
+   "mandate_start_date": "2026-10-19",
+   "max_shares": null,
+   "notes": "",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "BRPT",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261019040453-225/LCM-DOC/CAP/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261019_TPIA_Laporan Informasi dan Fakta Material_32167256.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/29a8ab134d_50127c015e.pdf"
+    },
+    {
+     "filename": "20261019_TPIA_Laporan Informasi dan Fakta Material_32167256_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/18e166ae56_758574782c.pdf"
+    }
+   ],
+   "id": "20261019040453-225/LCM-DOC/CAP/X/2026_en-us",
+   "publish_date": "2026-10-19T04:04:53",
+   "symbol": "TPIA",
+   "title": "DISCLOSURE OF INFORMATION TO SHAREHOLDERS OF PT CHANDRA ASRI PACIFIC TBK WITH RESPECT TO THE COMPANYS SHARES BUYBACK PLAN"
+  },
+  "cost": 0.00309223,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 1000000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-01-19",
+   "mandate_start_date": "2026-10-20",
+   "max_shares": 800000000,
+   "notes": "",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "TPIA",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261019064436-069/CS-L/PJK/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261019_CUAN_Laporan Informasi dan Fakta Material_32167323.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/7c82738ddc_86f4727ce9.pdf"
+    },
+    {
+     "filename": "20261019_CUAN_Laporan Informasi dan Fakta Material_32167323_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/31729df149_986ecb320c.pdf"
+    },
+    {
+     "filename": "20261019_CUAN_Laporan Informasi dan Fakta Material_32167323_lamp3.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/4c85f78722_6e68d8e6b6.pdf"
+    },
+    {
+     "filename": "20261019_CUAN_Laporan Informasi dan Fakta Material_32167323_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/54b232b386_1b5a903983.pdf"
+    }
+   ],
+   "id": "20261019064436-069/CS-L/PJK/X/2026_en-us",
+   "publish_date": "2026-10-19T06:44:36",
+   "symbol": "CUAN",
+   "title": "Disclosure of Information from PT Petrindo Jaya Kreasi Tbk. Regarding the Company's Plan to Conduct a Share Buyback (CORRECTION)"
+  },
+  "cost": 0.00343124,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 500000000000,
+   "doc_type": "plan_update",
+   "is_share_buyback": true,
+   "mandate_end_date": "2026-12-31",
+   "mandate_start_date": "2026-10-19",
+   "max_shares": null,
+   "notes": "This is a correction/amendment to the buyback plan announced on 19 October 2026; no specific maximum number of shares is stated, only the maximum budget of Rp500,000,000,000.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "CUAN",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261019080856-068/CS-L/PJK/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261019_CUAN_Laporan Informasi dan Fakta Material_32167220.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/a2aeeaa508_8d5bd4bf44.pdf"
+    },
+    {
+     "filename": "20261019_CUAN_Laporan Informasi dan Fakta Material_32167220_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/33ba166e91_f57bfc2abb.pdf"
+    },
+    {
+     "filename": "20261019_CUAN_Laporan Informasi dan Fakta Material_32167220_lamp3.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/3db0b397c6_04cf90ff7c.pdf"
+    },
+    {
+     "filename": "20261019_CUAN_Laporan Informasi dan Fakta Material_32167220_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/b76a8094a6_a29d0f3971.pdf"
+    }
+   ],
+   "id": "20261019080856-068/CS-L/PJK/X/2026_en-us",
+   "publish_date": "2026-10-19T08:08:56",
+   "symbol": "CUAN",
+   "title": "Disclosure of Information from PT Petrindo Jaya Kreasi Tbk. Regarding the Company's Plan to Conduct a Share Buyback"
+  },
+  "cost": 0.00336704,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 500000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2026-12-31",
+   "mandate_start_date": "2026-10-19",
+   "max_shares": null,
+   "notes": "The maximum number of shares to be bought back is not stated in the document.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "CUAN",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261019081239-018/BREN/BOD/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261019_BREN_Laporan Informasi dan Fakta Material_32167222.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/ad979f49cd_c76382c743.pdf"
+    },
+    {
+     "filename": "20261019_BREN_Laporan Informasi dan Fakta Material_32167222_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/02717897d1_54bc78a007.pdf"
+    },
+    {
+     "filename": "20261019_BREN_Laporan Informasi dan Fakta Material_32167222_lamp3.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/df823c7cce_77deddf410.pdf"
+    },
+    {
+     "filename": "20261019_BREN_Laporan Informasi dan Fakta Material_32167222_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/e17c9e5b19_14b1527807.pdf"
+    }
+   ],
+   "id": "20261019081239-018/BREN/BOD/X/2026_en-us",
+   "publish_date": "2026-10-19T08:12:39",
+   "symbol": "BREN",
+   "title": "Information Disclosure related to PT Barito Renewables Energy Tbk plan to buyback shares"
+  },
+  "cost": 0.00290279,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 1000000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2026-12-31",
+   "mandate_start_date": "2026-10-19",
+   "max_shares": null,
+   "notes": "The document is an announcement of a new buyback plan and does not specify the maximum number of shares to be bought back.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "BREN",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261019084349-177/CSDSS-10/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261019_DSSA_Laporan Informasi dan Fakta Material_32167232.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/46d1c50b74_199564f0a1.pdf"
+    },
+    {
+     "filename": "20261019_DSSA_Laporan Informasi dan Fakta Material_32167232_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/0e9798da0d_39b2c434c0.pdf"
+    },
+    {
+     "filename": "20261019_DSSA_Laporan Informasi dan Fakta Material_32167232_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/78fb9461d7_acc7d4eece.pdf"
+    }
+   ],
+   "id": "20261019084349-177/CSDSS-10/2026_en-us",
+   "publish_date": "2026-10-19T08:43:49",
+   "symbol": "DSSA",
+   "title": "The Companys Plan to Conduct a Share Buyback"
+  },
+  "cost": 0.00220359,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 1000000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-01-18",
+   "mandate_start_date": "2026-10-19",
+   "max_shares": null,
+   "notes": "",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "DSSA",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261019094719-089/PBS-CSL/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261019_PBSA_Laporan Informasi dan Fakta Material_32167428.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/4b6bc883c1_92696b9e6e.pdf"
+    },
+    {
+     "filename": "20261019_PBSA_Laporan Informasi dan Fakta Material_32167428_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/45905f8ede_7c4c575346.pdf"
+    }
+   ],
+   "id": "20261019094719-089/PBS-CSL/X/2026_en-us",
+   "publish_date": "2026-10-19T09:47:19",
+   "symbol": "PBSA",
+   "title": "The Companys Plan to Conduct a Share Buyback in a Significantly Fluctuating Market Condition"
+  },
+  "cost": 0.00197742,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 100000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-01-19",
+   "mandate_start_date": "2026-10-20",
+   "max_shares": null,
+   "notes": "Maximum shares to be bought back is stated as 20% of paid-up capital without a specific share number.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "PBSA",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261019105521-177A/CSDSS-10/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261019_DSSA_Laporan Informasi dan Fakta Material_32167287.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/af73312346_4332453a92.pdf"
+    },
+    {
+     "filename": "20261019_DSSA_Laporan Informasi dan Fakta Material_32167287_lamp3.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/277a076dde_371dbf7022.pdf"
+    },
+    {
+     "filename": "20261019_DSSA_Laporan Informasi dan Fakta Material_32167287_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/501c6b78da_e3e9fe49d9.pdf"
+    },
+    {
+     "filename": "20261019_DSSA_Laporan Informasi dan Fakta Material_32167287_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/c8aa3c2a43_285cdc519f.pdf"
+    }
+   ],
+   "id": "20261019105521-177A/CSDSS-10/2026_en-us",
+   "publish_date": "2026-10-19T10:55:21",
+   "symbol": "DSSA",
+   "title": "The Companys Plan to Conduct a Share Buyback (CORRECTION)"
+  },
+  "cost": 0.00298877,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 1000000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-01-18",
+   "mandate_start_date": "2026-10-19",
+   "max_shares": null,
+   "notes": "This is a correction announcement to the previous letter dated 19 October 2026 regarding the share buyback plan.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "DSSA",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261019150823-228/LCM-DOC/CAP/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261019_TPIA_Laporan Informasi dan Fakta Material_32167377.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/9bfe110ef9_e75b96abcf.pdf"
+    },
+    {
+     "filename": "20261019_TPIA_Laporan Informasi dan Fakta Material_32167377_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/0ada3a9e47_0724e87131.pdf"
+    }
+   ],
+   "id": "20261019150823-228/LCM-DOC/CAP/X/2026_en-us",
+   "publish_date": "2026-10-19T15:08:23",
+   "symbol": "TPIA",
+   "title": "REVISION OF DISCLOSURE OF INFORMATION TO SHAREHOLDERS OF PT CHANDRA ASRI PACIFIC TBK WITH RESPECT TO THE COMPANYS SHARES BUYBACK PLAN (CORRECTION)"
+  },
+  "cost": 0.00317004,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 1000000000000,
+   "doc_type": "plan_update",
+   "is_share_buyback": true,
+   "mandate_end_date": "2026-12-31",
+   "mandate_start_date": "2026-10-19",
+   "max_shares": 800000000,
+   "notes": "This is a correction to the previous buyback plan announcement, changing the buyback period from 20 Oct 2026 - 19 Jan 2027 to 19 Oct 2026 - 31 Dec 2026.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "TPIA",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261019163310-060/PLOG-Corsec/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261019_PSSI_Laporan Informasi dan Fakta Material_32167348.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/fb8281f46d_94d18efee3.pdf"
+    },
+    {
+     "filename": "20261019_PSSI_Laporan Informasi dan Fakta Material_32167348_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/e7b9a04d20_7ca32a4f98.pdf"
+    }
+   ],
+   "id": "20261019163310-060/PLOG-Corsec/X/2026_en-us",
+   "publish_date": "2026-10-19T16:33:10",
+   "symbol": "PSSI",
+   "title": "Additional Information on the Disclosure of Information regarding the Planned Transfer of Treasury Shares - (Supplementing the Disclosure of Information dated 14 September 2026)"
+  },
+  "cost": 0.00170291,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": null,
+   "doc_type": "other",
+   "is_share_buyback": false,
+   "mandate_end_date": null,
+   "mandate_start_date": null,
+   "max_shares": null,
+   "notes": "The document is an announcement regarding the planned transfer of treasury shares resulting from a previously completed buyback program (Tahap III), not a new buyback plan or progress report.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "PSSI",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261019163458-229/LCM-DOC/CAP/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261019_TPIA_Laporan Informasi dan Fakta Material_32167423.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/395415ea36_1bc1f1c3cb.pdf"
+    },
+    {
+     "filename": "20261019_TPIA_Laporan Informasi dan Fakta Material_32167423_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/d436b1c04d_7eecb7749f.pdf"
+    }
+   ],
+   "id": "20261019163458-229/LCM-DOC/CAP/X/2026_en-us",
+   "publish_date": "2026-10-19T16:34:58",
+   "symbol": "TPIA",
+   "title": "REVISION OF DISCLOSURE OF INFORMATION TO SHAREHOLDERS OF PT CHANDRA ASRI PACIFIC TBK WITH RESPECT TO THE COMPANYS SHARES BUYBACK PLAN (CORRECTION)"
+  },
+  "cost": 0.00460072,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 1000000000000,
+   "doc_type": "plan_update",
+   "is_share_buyback": true,
+   "mandate_end_date": "2026-12-31",
+   "mandate_start_date": "2026-10-19",
+   "max_shares": 800000000,
+   "notes": "This document is a revision/correction of the company's previous share buyback plan announcement (Letter No. 228/LCM-DOC/CAP/X/2026).",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "TPIA",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
