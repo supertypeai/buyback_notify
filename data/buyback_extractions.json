@@ -36641,5 +36641,47 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261020195258-2207/CSD/CMPO/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261020_BBTN_Laporan Informasi dan Fakta Material_32167823.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/f4e8d34933_33e284b2b2.pdf"
+    },
+    {
+     "filename": "20261020_BBTN_Laporan Informasi dan Fakta Material_32167823_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/8d69b74aa1_928150292f.pdf"
+    }
+   ],
+   "id": "20261020195258-2207/CSD/CMPO/X/2026_en-us",
+   "publish_date": "2026-10-20T19:52:58",
+   "symbol": "BBTN",
+   "title": "Press Release: BTN Evaluates Share Buyback Options"
+  },
+  "cost": 0.00204773,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": null,
+   "doc_type": "other",
+   "is_share_buyback": false,
+   "mandate_end_date": null,
+   "mandate_start_date": null,
+   "max_shares": null,
+   "notes": "The document is a press release stating that the company is only evaluating/considering a share buyback option, not announcing a formal plan or reporting on purchases.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "BBTN",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
