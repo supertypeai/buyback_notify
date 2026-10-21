@@ -36683,5 +36683,89 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261021164441-006/CS/MBSS/OJK/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261021_MBSS_Laporan Informasi dan Fakta Material_32168034.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/5e95d390fe_87bd211234.pdf"
+    },
+    {
+     "filename": "20261021_MBSS_Laporan Informasi dan Fakta Material_32168034_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/f6b9a11cf7_28e4c4f23a.pdf"
+    }
+   ],
+   "id": "20261021164441-006/CS/MBSS/OJK/X/2026_en-us",
+   "publish_date": "2026-10-21T16:44:41",
+   "symbol": "MBSS",
+   "title": "Disclosure of Information in Relation to The Proposed Shares Buyback of PT Mitrabahtera Segara Sejati Tbk"
+  },
+  "cost": 0.00311437,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 200000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-01-21",
+   "mandate_start_date": "2026-10-22",
+   "max_shares": 42169641,
+   "notes": "The Definitions section incorrectly identifies the Company as 'PT Harum Energy Tbk', likely a template error, but the issuer is confirmed as PT Mitrabahtera Segara Sejati Tbk (MBSS) throughout the rest of the document.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "MBSS",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261021212115-006a/CS/MBSS/OJK/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261021_MBSS_Laporan Informasi dan Fakta Material_32168170.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/34234077f9_ee7130d939.pdf"
+    },
+    {
+     "filename": "20261021_MBSS_Laporan Informasi dan Fakta Material_32168170_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/85d099d137_6b41bbbf25.pdf"
+    }
+   ],
+   "id": "20261021212115-006a/CS/MBSS/OJK/X/2026_en-us",
+   "publish_date": "2026-10-21T21:21:15",
+   "symbol": "MBSS",
+   "title": "Disclosure of Information in Relation to The Proposed Shares Buyback of PT Mitrabahtera Segara Sejati Tbk (CORRECTION)"
+  },
+  "cost": 0.000845458,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 200000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2026-12-31",
+   "mandate_start_date": "2026-10-22",
+   "max_shares": 42169641,
+   "notes": "This document is a correction to a previously announced share buyback plan.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "MBSS",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
