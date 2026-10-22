@@ -36767,5 +36767,101 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261022074119-B.83.e-CSC/CSM/10/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261022_BBRI_Laporan Informasi dan Fakta Material_32168408.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/9a298ba47b_ea6130fd80.pdf"
+    },
+    {
+     "filename": "20261022_BBRI_Laporan Informasi dan Fakta Material_32168408_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/22acc4c654_0d1ca36e7a.pdf"
+    },
+    {
+     "filename": "20261022_BBRI_Laporan Informasi dan Fakta Material_32168408_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/ae664687a9_93be4f3052.pdf"
+    },
+    {
+     "filename": "20261022_BBRI_Laporan Informasi dan Fakta Material_32168408_lamp3.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/c4d46d5463_a724397417.pdf"
+    }
+   ],
+   "id": "20261022074119-B.83.e-CSC/CSM/10/2026_en-us",
+   "publish_date": "2026-10-22T07:41:19",
+   "symbol": "BBRI",
+   "title": "Plans to Undertake a Share Buyback Action Under Significantly Fluctuating Market Conditions"
+  },
+  "cost": 0.00297999,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 1000000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-01-21",
+   "mandate_start_date": "2026-10-22",
+   "max_shares": null,
+   "notes": "Plan for Buyback 2026 Phase II under POJK 13/2023; budget of Rp1 trillion excludes estimated 0.20% buyback cost; no purchases reported yet and no maximum share count stated.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "BBRI",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261022080436-046/CORSEC/AMI/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261022_AMMN_Laporan Informasi dan Fakta Material_32168436.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/f321a94491_f8dbf746f2.pdf"
+    },
+    {
+     "filename": "20261022_AMMN_Laporan Informasi dan Fakta Material_32168436_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/ada27e353b_c20189899c.pdf"
+    },
+    {
+     "filename": "20261022_AMMN_Laporan Informasi dan Fakta Material_32168436_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/e092815c9a_563e94d053.pdf"
+    }
+   ],
+   "id": "20261022080436-046/CORSEC/AMI/X/2026_en-us",
+   "publish_date": "2026-10-22T08:04:36",
+   "symbol": "AMMN",
+   "title": "Disclosure of Information on the Shares Buyback Plan in Conditions of Significant Market Fluctuations"
+  },
+  "cost": 0.00374479,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 1000000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-01-22",
+   "mandate_start_date": "2026-10-22",
+   "max_shares": 266844919,
+   "notes": "Buyback plan under POJK 13/2023 (significant market fluctuations); no purchases disclosed yet. Allocated fund Rp1 trillion. The plan text caps shares at 0.37% of issued capital without an absolute figure; max_shares (266,844,919) is taken from the proforma 'impact' row on outstanding shares, which corresponds to that 0.37% assumption.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "AMMN",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
