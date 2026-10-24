@@ -37400,5 +37400,116 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261023231717-065/PLOG-Corsec/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261023_PSSI_Laporan Informasi dan Fakta Material_32169000.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/13eb4acbda_a697b3ba7d.pdf"
+    },
+    {
+     "filename": "20261023_PSSI_Laporan Informasi dan Fakta Material_32169000_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/21273e2152_249483e68a.pdf"
+    },
+    {
+     "filename": "20261023_PSSI_Laporan Informasi dan Fakta Material_32169000_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/c9a056c6c2_066ef90945.pdf"
+    }
+   ],
+   "id": "20261023231717-065/PLOG-Corsec/X/2026_en-us",
+   "publish_date": "2026-10-23T23:17:17",
+   "symbol": "PSSI",
+   "title": "Amendment to the Disclosure of Information on the Transfer of the Company's Repurchased Shares (Treasury Shares) through the Pro Rata Distribution of Repurchased Shares to Shareholders (CORRECTION)"
+  },
+  "cost": 0.00535219,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": null,
+   "doc_type": "other",
+   "is_share_buyback": false,
+   "mandate_end_date": null,
+   "mandate_start_date": null,
+   "max_shares": null,
+   "notes": "Document is a CORRECTION about transferring/distributing existing treasury shares (not a buyback); the recap table omits the Second Repurchase Program and its Phase I 'realization' figure (139,105,400) is the shares remaining to transfer, not the 167,596,800 repurchased stated in the narrative.",
+   "previous_programs": [
+    {
+     "end_date": "2022-04-04",
+     "start_date": "2021-06-17",
+     "total_shares": 167596800,
+     "total_value": null
+    },
+    {
+     "end_date": null,
+     "start_date": null,
+     "total_shares": 40167900,
+     "total_value": null
+    },
+    {
+     "end_date": "2025-09-30",
+     "start_date": "2025-07-01",
+     "total_shares": 116600700,
+     "total_value": null
+    }
+   ],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "PSSI",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261023231839-066/PLOG-Corsec/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261023_PSSI_Laporan Informasi dan Fakta Material_32169001.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/3aa3bb38d4_cd22a9f7fc.pdf"
+    },
+    {
+     "filename": "20261023_PSSI_Laporan Informasi dan Fakta Material_32169001_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/0c8a4a56f6_4ab14ee025.pdf"
+    },
+    {
+     "filename": "20261023_PSSI_Laporan Informasi dan Fakta Material_32169001_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/15ce994e73_add5db22a5.pdf"
+    }
+   ],
+   "id": "20261023231839-066/PLOG-Corsec/X/2026_en-us",
+   "publish_date": "2026-10-23T23:18:39",
+   "symbol": "PSSI",
+   "title": "Amendment to the Disclosure of Information on the Transfer of the Company's Repurchased Shares (Treasury Shares) through the Pro Rata Distribution of Repurchased Shares to Shareholders (CORRECTION)"
+  },
+  "cost": 0.00450149,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": null,
+   "doc_type": "other",
+   "is_share_buyback": false,
+   "mandate_end_date": null,
+   "mandate_start_date": null,
+   "max_shares": null,
+   "notes": "This correction concerns the transfer/pro-rata distribution of existing treasury shares to shareholders, not a buyback program; the three historical repurchase phases (2021-2025) are cited only as background on the origin of the treasury shares.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "PSSI",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
