@@ -31924,7 +31924,7 @@
   "guard_issues": [],
   "model": "qwen/qwen3.8-flash",
   "rounds": 1,
-  "synced": false,
+  "synced": true,
   "version": 4
  },
  "20260728193009-071/GOTO/CS/JKT/VII/2026_en-us": {
@@ -37503,6 +37503,178 @@
    "stated_total_shares": null,
    "stated_total_value": null,
    "symbol": "PSSI",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261026113643-039/RPI-CS/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261026_PSKT_Laporan Informasi dan Fakta Material_32169068.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/587a45e84f_a18d8343e4.pdf"
+    },
+    {
+     "filename": "20261026_PSKT_Laporan Informasi dan Fakta Material_32169068_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/f1d1dad567_155611f95a.pdf"
+    }
+   ],
+   "id": "20261026113643-039/RPI-CS/X/2026_en-us",
+   "publish_date": "2026-10-26T11:36:43",
+   "symbol": "PSKT",
+   "title": "Public Disclosure on the Proposed Shares Buyback amid Significantly Fluctuating Market Condition"
+  },
+  "cost": 0.00229798,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 5000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-01-26",
+   "mandate_start_date": "2026-10-27",
+   "max_shares": null,
+   "notes": "Plan only, no purchases yet; the 30,000,000 shares in the proforma table is an illustrative assumption (\"dapat berubah\"), not a stated program maximum, which is instead capped at 20% of issued capital with a Rp5,000,000,000 budget.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "PSKT",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261026143034-CSE/7/10305_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261026_BBNI_Laporan Informasi dan Fakta Material_32169327.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/03e2c1daef_0287d60d1d.pdf"
+    },
+    {
+     "filename": "20261026_BBNI_Laporan Informasi dan Fakta Material_32169327_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/840a0027ff_b1c146f78f.pdf"
+    }
+   ],
+   "id": "20261026143034-CSE/7/10305_en-us",
+   "publish_date": "2026-10-26T14:30:34",
+   "symbol": "BBNI",
+   "title": "Report on Information or Material Facts Regarding the Expiration of the Period and Completion of the Share Buyback Transaction under Significantly Fluctuating Market Conditions of PT Bank Negara Indonesia (Persero) Tbk."
+  },
+  "cost": 0.00218079,
+  "extraction": {
+   "accumulated_shares_purchased": 22950000,
+   "allocated_fund": 627000000000,
+   "doc_type": "final_report",
+   "is_share_buyback": true,
+   "mandate_end_date": "2026-10-26",
+   "mandate_start_date": "2026-07-27",
+   "max_shares": null,
+   "notes": "Completion report of the 27 Jul 2026-26 Oct 2026 buyback; only the total (22,950,000 shares) is given with no daily transaction table and no total IDR spent, so utilized_fund/value are null. The letterhead date was handwritten as '26 OCT 2025' with '2025' struck through and corrected to 2026, matching the typed body (26 Oktober 2026).",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": "2026-10-26",
+   "stated_total_shares": 22950000,
+   "stated_total_value": null,
+   "symbol": "BBNI",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261026183649-06/2069-3/CSG_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261026_BRIS_Laporan Informasi dan Fakta Material_32169224.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/e80a044001_07cdfc2a24.pdf"
+    },
+    {
+     "filename": "20261026_BRIS_Laporan Informasi dan Fakta Material_32169224_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/53aa626392_36fd64c7d0.pdf"
+    },
+    {
+     "filename": "20261026_BRIS_Laporan Informasi dan Fakta Material_32169224_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/547f321648_72d48ebfa1.pdf"
+    }
+   ],
+   "id": "20261026183649-06/2069-3/CSG_en-us",
+   "publish_date": "2026-10-26T18:36:49",
+   "symbol": "BRIS",
+   "title": "Disclosure of Information in Relation to the Company's Share Buyback Plan Under Significantly Fluctuating Market Conditions"
+  },
+  "cost": 0.00284208,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 500000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-01-26",
+   "mandate_start_date": "2026-10-27",
+   "max_shares": null,
+   "notes": "Buyback plan under POJK 13/2023; only a maximum value of Rp500 billion is stated, no maximum share count given, and no purchases have occurred yet.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "BRIS",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261026205927-044/MMI-CORP/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261026_MMIX_Laporan Informasi dan Fakta Material_32169329.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/f48cf3c465_591c460512.pdf"
+    },
+    {
+     "filename": "20261026_MMIX_Laporan Informasi dan Fakta Material_32169329_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/b6ed7cd200_a5bce6e9e6.pdf"
+    }
+   ],
+   "id": "20261026205927-044/MMI-CORP/X/2026_en-us",
+   "publish_date": "2026-10-26T20:59:27",
+   "symbol": "MMIX",
+   "title": "The share purchase deal and the ownership change that comes with it for the shareholder (Buyback)"
+  },
+  "cost": 0.00147991,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": null,
+   "doc_type": "other",
+   "is_share_buyback": false,
+   "mandate_end_date": null,
+   "mandate_start_date": null,
+   "max_shares": null,
+   "notes": "Disclosure concerns a shareholder (Mengky Mangrek, Direktur Utama) purchasing 1,000,000 shares on 23-Oct-2026, increasing his holding to 289,000,000 shares (6.02%); this is a shareholder's share purchase, not a company buyback of its own treasury shares.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "MMIX",
    "transactions": [],
    "utilized_fund": null
   },
