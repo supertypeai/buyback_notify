@@ -37683,5 +37683,89 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261028170907-241/LCM-DOC/CAP/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261028_TPIA_Laporan Informasi dan Fakta Material_32169736.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/7337fa550c_04bbac874a.pdf"
+    },
+    {
+     "filename": "20261028_TPIA_Laporan Informasi dan Fakta Material_32169736_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/a04bf53e47_3ff7b8ce38.pdf"
+    }
+   ],
+   "id": "20261028170907-241/LCM-DOC/CAP/X/2026_en-us",
+   "publish_date": "2026-10-28T17:09:07",
+   "symbol": "TPIA",
+   "title": "Disclosure of Information regarding Other Material Information or Facts Regarding the Termination of Share Buyback Period"
+  },
+  "cost": 0.00199673,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 1000000000000,
+   "doc_type": "termination",
+   "is_share_buyback": true,
+   "mandate_end_date": "2026-10-28",
+   "mandate_start_date": "2026-10-19",
+   "max_shares": 800000000,
+   "notes": "Termination notice only; no daily purchase table or totals are reported. The buyback (originally 19 Oct 2026–31 Dec 2026, budget Rp1 trillion, max 800,000,000 shares / 0.92%) was ceased early on 28 Oct 2026 to launch a new buyback program with adjusted funds.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "TPIA",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261028191217-CSE/7/10366_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261028_BBNI_Laporan Informasi dan Fakta Material_32169887.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/1e504f11aa_dae985e0b0.pdf"
+    },
+    {
+     "filename": "20261028_BBNI_Laporan Informasi dan Fakta Material_32169887_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/278a577017_891366d064.pdf"
+    }
+   ],
+   "id": "20261028191217-CSE/7/10366_en-us",
+   "publish_date": "2026-10-28T19:12:17",
+   "symbol": "BBNI",
+   "title": "Disclosure of Information in Connection with the Share Buyback by PT Bank Negara Indonesia (Persero) Tbk under Significantly Fluctuating Market Conditions"
+  },
+  "cost": 0.00341075,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 547000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-01-27",
+   "mandate_start_date": "2026-10-28",
+   "max_shares": null,
+   "notes": "Plan announcement only; budget of Rp547,000,000,000 stated but no maximum number of shares is given and no purchases have been executed yet.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "BBNI",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
