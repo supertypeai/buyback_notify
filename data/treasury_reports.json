@@ -4600,6 +4600,17 @@
   "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/184e83ee8b_603d8d402c.pdf",
   "version": 2
  },
+ "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/19493324a7_d462ea9b64.pdf": {
+  "month_end": "2026-09-30",
+  "pct": 0.95,
+  "prev_pct": 0.46,
+  "prev_shares": 18000000,
+  "published": "2026-10-29T20:09:32",
+  "shares": 37625000,
+  "title": "Monthly Report of Securities Holders Registration (CORRECTION)",
+  "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/19493324a7_d462ea9b64.pdf",
+  "version": 2
+ },
  "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/1f7a7160bc_3466c988c4.pdf": {
   "month_end": "2026-09-30",
   "pct": 0.48,

@@ -37767,5 +37767,47 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261029073257-244/LCM-DOC/CAP/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261028_TPIA_Laporan Informasi dan Fakta Material_32169885.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/1b5bd0dbdd_bbeeb161cd.pdf"
+    },
+    {
+     "filename": "20261028_TPIA_Laporan Informasi dan Fakta Material_32169885_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/8ce142313f_9873c52718.pdf"
+    }
+   ],
+   "id": "20261029073257-244/LCM-DOC/CAP/X/2026_en-us",
+   "publish_date": "2026-10-29T07:32:57",
+   "symbol": "TPIA",
+   "title": "DISCLOSURE OF INFORMATION TO SHAREHOLDERS OF PT CHANDRA ASRI PACIFIC TBK WITH RESPECT TO THE COMPANYS SHARES BUYBACK PLAN"
+  },
+  "cost": 0.00315098,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 2000000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-01-28",
+   "mandate_start_date": "2026-10-29",
+   "max_shares": 1600000000,
+   "notes": "",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "TPIA",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
