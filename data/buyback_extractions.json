@@ -38306,5 +38306,101 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261102085408-085/CPI/DIR/X/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261102_IGAR_Laporan Informasi dan Fakta Material_32171025.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/d46c8130bf_91c04a2232.pdf"
+    },
+    {
+     "filename": "20261102_IGAR_Laporan Informasi dan Fakta Material_32171025_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/4bd1387ca6_9bffd5cfe3.pdf"
+    },
+    {
+     "filename": "20261102_IGAR_Laporan Informasi dan Fakta Material_32171025_lamp4.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/65765bd0bb_8131730a7f.pdf"
+    },
+    {
+     "filename": "20261102_IGAR_Laporan Informasi dan Fakta Material_32171025_lamp3.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/7840d75d56_9288a60ff3.pdf"
+    },
+    {
+     "filename": "20261102_IGAR_Laporan Informasi dan Fakta Material_32171025_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/a8f6eb36ca_43bf1085f0.pdf"
+    }
+   ],
+   "id": "20261102085408-085/CPI/DIR/X/2026_en-us",
+   "publish_date": "2026-11-02T08:54:08",
+   "symbol": "IGAR",
+   "title": "Information Disclosure to Shareholders in Connection With The Change of Status From a Public Company to a Private Company and The Implementation of The Share Buyback of a Public Company"
+  },
+  "cost": 0.00695042,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 163441089000,
+   "doc_type": "plan",
+   "is_share_buyback": false,
+   "mandate_end_date": "2027-11-02",
+   "mandate_start_date": "2026-11-02",
+   "max_shares": 155658180,
+   "notes": "This is a mandatory share buyback offer to public shareholders in connection with the go-private and delisting plan (POJK 45/2024 / POJK 29/2023), at Rp1,050/share for 155,658,180 shares (~16.78% of issued), with estimated funds Rp163,441,089,000 and term up to 2 Nov 2027; per the extraction rules a go-private/delisting buyback is not a buyback program, so is_share_buyback is false.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "IGAR",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261102190336-01/XI/TI/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261102_TRIS_Laporan Informasi dan Fakta Material_32171365.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/b00fb9cd82_5e16c35741.pdf"
+    },
+    {
+     "filename": "20261102_TRIS_Laporan Informasi dan Fakta Material_32171365_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/8f5f4031fc_c4cbbf26e2.pdf"
+    }
+   ],
+   "id": "20261102190336-01/XI/TI/2026_en-us",
+   "publish_date": "2026-11-02T19:03:36",
+   "symbol": "TRIS",
+   "title": "Buyback Shares Implementation Plan in Significantly Fluctuating Market Conditions"
+  },
+  "cost": 0.00191412,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 10000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-02-02",
+   "mandate_start_date": "2026-11-03",
+   "max_shares": 62000000,
+   "notes": "",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "TRIS",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
