@@ -58,21 +58,29 @@ class IdxUnreachable(RuntimeError):
     """No session could reach IDX at all; retrying company by company would only waste time."""
 
 
-def _new_session():
+def _new_session(rounds: int = 3):
     last = None
-    for imp in _FINGERPRINTS:
-        # The proxy re-signs HTTPS with its own certificate, so verification fails through it
-        s = cffi_requests.Session(impersonate=imp, proxies=_PROXIES, verify=not _proxy)
-        try:
-            s.get("https://www.idx.co.id/en/", timeout=30)
-            probe = s.get(ANNOUNCEMENT_URL, params={"kodeEmiten": "BBCA", "emitenType": "*", "indexFrom": 0,
-                                                    "pageSize": 1, "lang": "en"}, timeout=30)
-            if probe.status_code == 200:
-                return s
-            last = f"HTTP {probe.status_code}"
-        except Exception as e:
-            last = f"{type(e).__name__}: {e}"
-    raise IdxUnreachable(f"IDX unreachable with every TLS fingerprint (last: {last})")
+    for attempt in range(rounds):
+        if attempt:
+            time.sleep(60 * attempt)  # IDX / the proxy can stall for minutes; wait it out before giving up
+        for imp in _FINGERPRINTS:
+            # The proxy re-signs HTTPS with its own certificate, so verification fails through it
+            s = cffi_requests.Session(impersonate=imp, proxies=_PROXIES, verify=not _proxy)
+            try:
+                # Home page warm-up only picks up cookies; the probe below decides whether the session works
+                s.get("https://www.idx.co.id/en/", timeout=30)
+            except Exception as e:
+                print(f"  {imp}: home page {type(e).__name__}: {e}")
+            try:
+                probe = s.get(ANNOUNCEMENT_URL, params={"kodeEmiten": "BBCA", "emitenType": "*", "indexFrom": 0,
+                                                        "pageSize": 1, "lang": "en"}, timeout=30)
+                if probe.status_code == 200:
+                    return s
+                last = f"HTTP {probe.status_code}"
+            except Exception as e:
+                last = f"{type(e).__name__}: {e}"
+            print(f"  {imp}: probe {last}")
+    raise IdxUnreachable(f"IDX unreachable with every TLS fingerprint, {rounds} rounds (last: {last})")
 
 
 def _get(url: str, params: dict | None = None, retries: int = 4):
