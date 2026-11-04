@@ -38402,5 +38402,93 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261104154723-26-11-KTR-LT-0015-GE-J3.1_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261104_DGIK_Laporan Informasi dan Fakta Material_32171922.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/43d93146f0_7a537fe88d.pdf"
+    },
+    {
+     "filename": "20261104_DGIK_Laporan Informasi dan Fakta Material_32171922_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/72f8d6095c_2e12b03b33.pdf"
+    }
+   ],
+   "id": "20261104154723-26-11-KTR-LT-0015-GE-J3.1_en-us",
+   "publish_date": "2026-11-04T15:47:23",
+   "symbol": "DGIK",
+   "title": "Disclosure of Information on the Sale of Buyback Shares"
+  },
+  "cost": 0.00200887,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": null,
+   "doc_type": "other",
+   "is_share_buyback": false,
+   "mandate_end_date": null,
+   "mandate_start_date": null,
+   "max_shares": null,
+   "notes": "Document discloses the off-exchange transfer/sale of 400,214,500 treasury shares (acquired in a prior 7 Mar 2022 - 19 Sep 2023 buyback) to PT Global Dinamika Kencana, not a buyback program.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "DGIK",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261104173908-7222/L/ITM/CorSec/11/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261104_ITMG_Laporan Informasi dan Fakta Material_32172017.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/d10c605d0b_5464cccc88.pdf"
+    },
+    {
+     "filename": "20261104_ITMG_Laporan Informasi dan Fakta Material_32172017_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/44bc3c3a4b_9638d873c1.pdf"
+    },
+    {
+     "filename": "20261104_ITMG_Laporan Informasi dan Fakta Material_32172017_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/7fe60fd7ff_0f0c921da8.pdf"
+    }
+   ],
+   "id": "20261104173908-7222/L/ITM/CorSec/11/2026_en-us",
+   "publish_date": "2026-11-04T17:39:08",
+   "symbol": "ITMG",
+   "title": "Plan for Share Buyback under Conditions of Significant Market Volatility"
+  },
+  "cost": 0.00313387,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 2311000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-02-04",
+   "mandate_start_date": "2026-11-05",
+   "max_shares": null,
+   "notes": "Maximum number of shares is not stated; the document only caps total treasury shares (this program plus prior programs) at 20% of paid-up capital.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "ITMG",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
