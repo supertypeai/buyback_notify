@@ -5444,5 +5444,49 @@
   "title": "Monthly Report of Securities Holders Registration",
   "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202610/ffba0dd08b_1680e512f8.pdf",
   "version": 2
+ },
+ "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/85157b47f0_0a919849d7.pdf": {
+  "month_end": "2026-10-31",
+  "pct": 1.04,
+  "prev_pct": 0.99,
+  "prev_shares": 67720000,
+  "published": "2026-11-05T15:47:06",
+  "shares": 71120000,
+  "title": "Monthly Report of Securities Holders Registration",
+  "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/85157b47f0_0a919849d7.pdf",
+  "version": 2
+ },
+ "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/b9ae92cc6a_0111ca87a7.pdf": {
+  "month_end": "2026-10-31",
+  "pct": 0.0,
+  "prev_pct": 0.0,
+  "prev_shares": 0,
+  "published": "2026-11-05T17:30:42",
+  "shares": 7150000,
+  "title": "Monthly Report of Securities Holders Registration",
+  "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/b9ae92cc6a_0111ca87a7.pdf",
+  "version": 2
+ },
+ "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/de20b6ef70_22c19f9aa8.pdf": {
+  "month_end": "2026-10-31",
+  "pct": 2.84,
+  "prev_pct": 2.79,
+  "prev_shares": 603142300,
+  "published": "2026-11-05T13:37:40",
+  "shares": 612225400,
+  "title": "Monthly Report of Securities Holders Registration",
+  "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/de20b6ef70_22c19f9aa8.pdf",
+  "version": 2
+ },
+ "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/f2afe5fc87_44a7baacff.pdf": {
+  "month_end": "2026-10-31",
+  "pct": 1.02,
+  "prev_pct": 0.59,
+  "prev_shares": 33671700,
+  "published": "2026-11-05T17:31:24",
+  "shares": 58101000,
+  "title": "Monthly Report of Securities Holders Registration",
+  "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/f2afe5fc87_44a7baacff.pdf",
+  "version": 2
  }
 }

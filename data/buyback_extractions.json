@@ -38490,5 +38490,97 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261105083736-166/XI/CS-ISSP/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261105_ISSP_Laporan Informasi dan Fakta Material_32182114.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/39a305aca5_c65ff71b46.pdf"
+    },
+    {
+     "filename": "20261105_ISSP_Laporan Informasi dan Fakta Material_32182114_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/1ff73860c0_892c996a53.pdf"
+    },
+    {
+     "filename": "20261105_ISSP_Laporan Informasi dan Fakta Material_32182114_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/54881f1007_150eff5be5.pdf"
+    }
+   ],
+   "id": "20261105083736-166/XI/CS-ISSP/2026_en-us",
+   "publish_date": "2026-11-05T08:37:36",
+   "symbol": "ISSP",
+   "title": "DISCLOSURE OF INFORMATION TO SHAREHOLDERS IN CONNECTION WITH THE PROPOSED SHARE BUYBACK"
+  },
+  "cost": 0.00290738,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 150000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-02-05",
+   "mandate_start_date": "2026-11-05",
+   "max_shares": 250000000,
+   "notes": "English version writes the budget as 'Rp150,000,000,000 (two hundred billion Rupiah)'; the figure equals 150 billion, so the words are inconsistent with the number (Indonesian version correctly says 'seratus lima puluh miliar'). No purchases reported.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "ISSP",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261105110423-166R/XI/CS-ISSP/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261105_ISSP_Laporan Informasi dan Fakta Material_32182271.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/2994ff6718_25295af40e.pdf"
+    },
+    {
+     "filename": "20261105_ISSP_Laporan Informasi dan Fakta Material_32182271_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/49d2b73761_20c7a70395.pdf"
+    },
+    {
+     "filename": "20261105_ISSP_Laporan Informasi dan Fakta Material_32182271_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/f7d536ca41_f10da08b9a.pdf"
+    }
+   ],
+   "id": "20261105110423-166R/XI/CS-ISSP/2026_en-us",
+   "publish_date": "2026-11-05T11:04:23",
+   "symbol": "ISSP",
+   "title": "DISCLOSURE OF INFORMATION TO SHAREHOLDERS IN CONNECTION WITH THE PROPOSED SHARE BUYBACK (CORRECTION)"
+  },
+  "cost": 0.00309049,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 150000000000,
+   "doc_type": "plan_update",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-02-05",
+   "mandate_start_date": "2026-11-05",
+   "max_shares": 250000000,
+   "notes": "Correction of the buyback plan; English words 'two hundred billion' contradict the printed figure Rp150,000,000,000 (150 billion), which matches the Indonesian words 'seratus lima puluh miliar'.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "ISSP",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
