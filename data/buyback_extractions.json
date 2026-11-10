@@ -39119,5 +39119,102 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261110171914-051/NFC/CORP/E/XI/26_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261110_NFCX_Laporan Informasi dan Fakta Material_32184487.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/ec83db80fc_9d8a9e09ad.pdf"
+    },
+    {
+     "filename": "20261110_NFCX_Laporan Informasi dan Fakta Material_32184487_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/1a31c440cb_3647d570e3.pdf"
+    },
+    {
+     "filename": "20261110_NFCX_Laporan Informasi dan Fakta Material_32184487_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/2f96068433_ab7bef8feb.pdf"
+    }
+   ],
+   "id": "20261110171914-051/NFC/CORP/E/XI/26_en-us",
+   "publish_date": "2026-11-10T17:19:14",
+   "symbol": "NFCX",
+   "title": "Plan for the Share Buyback of PT NFC Indonesia Tbk (the Company) (CORRECTION)"
+  },
+  "cost": 0.00401212,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": null,
+   "doc_type": "plan_update",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-02-08",
+   "mandate_start_date": "2026-11-09",
+   "max_shares": 49000000,
+   "notes": "This is a CORRECTION re-issuing the buyback plan (max 49,000,000 shares, ~7.35% of issued capital, period 9 Nov 2026–8 Feb 2027); no IDR budget is stated (only a 0.15% transaction-cost estimate) and the schedule shows disclosure submitted 6 Nov while the disclosure itself is dated 10 Nov 2026.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "NFCX",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261110191345-052/NFC/CORP/E/XI/26_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261110_NFCX_Laporan Informasi dan Fakta Material_32184541.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/3467abd790_c2ac03458c.pdf"
+    },
+    {
+     "filename": "20261110_NFCX_Laporan Informasi dan Fakta Material_32184541_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/44f37c834b_d21ac037d8.pdf"
+    }
+   ],
+   "id": "20261110191345-052/NFC/CORP/E/XI/26_en-us",
+   "publish_date": "2026-11-10T19:13:45",
+   "symbol": "NFCX",
+   "title": "Report on the Results of the Companys Share Buyback Implementation"
+  },
+  "cost": 0.00209962,
+  "extraction": {
+   "accumulated_shares_purchased": 120000,
+   "allocated_fund": null,
+   "doc_type": "progress_report",
+   "is_share_buyback": true,
+   "mandate_end_date": null,
+   "mandate_start_date": null,
+   "max_shares": null,
+   "notes": "Table reports only shares and purchase price; no total/value/budget columns printed, so value and utilized_fund left null.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": "2026-11-10",
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "NFCX",
+   "transactions": [
+    {
+     "average_price": 1800,
+     "date": "2026-11-10",
+     "percentage_of_shares": null,
+     "remaining_budget": null,
+     "share_amount": 120000,
+     "value": null
+    }
+   ],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
