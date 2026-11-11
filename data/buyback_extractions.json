@@ -39216,5 +39216,47 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261111163242-053/NFC/CORP/E/XI/26_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261111_NFCX_Laporan Informasi dan Fakta Material_32184802.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/5622d5c36e_f2b0d89d70.pdf"
+    },
+    {
+     "filename": "20261111_NFCX_Laporan Informasi dan Fakta Material_32184802_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/2c7f8667cc_1cc551f6a7.pdf"
+    }
+   ],
+   "id": "20261111163242-053/NFC/CORP/E/XI/26_en-us",
+   "publish_date": "2026-11-11T16:32:42",
+   "symbol": "NFCX",
+   "title": "Plan for the Share Buyback of PT NFC Indonesia Tbk (the Company) (CORRECTION)"
+  },
+  "cost": 0.000654464,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 150000000000,
+   "doc_type": "plan_update",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-02-08",
+   "mandate_start_date": "2026-11-09",
+   "max_shares": 49000000,
+   "notes": "This is a correction (KOREKSI) to the previous buyback plan announcement No. 051/NFC/CORP/E/XI/26 dated 10 November 2026; no purchases reported yet.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "NFCX",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
