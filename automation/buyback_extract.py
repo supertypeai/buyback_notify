@@ -59,13 +59,20 @@ def _session_for(impersonate: str):
     )
 
 
+def _is_challenge(resp) -> bool:
+    """Cloudflare's JS challenge is a 200 with an HTML body, not the JSON/PDF we asked for."""
+    head = resp.content[:300].lstrip().lower()
+    return head.startswith(b"<") and b"<html" in head
+
+
 def _get(url: str, params: dict | None = None, retries: int = 6):
     for attempt in range(retries):
         try:
             resp = _session_for(_FINGERPRINTS[attempt % len(_FINGERPRINTS)]).get(url, params=params, timeout=60)
-            if resp.status_code == 200:
+            if resp.status_code == 200 and not _is_challenge(resp):
                 return resp
-            print(f"  HTTP {resp.status_code} for {url}")
+            print(f"  HTTP {resp.status_code} for {url}" if resp.status_code != 200
+                  else f"  challenge page for {url}")
         except Exception as e:  # curl timeouts, resets
             print(f"  {type(e).__name__} for {url}: {e}")
         time.sleep(5 * (attempt + 1))

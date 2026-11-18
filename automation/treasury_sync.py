@@ -74,13 +74,20 @@ def _new_session(rounds: int = 3):
             try:
                 probe = s.get(ANNOUNCEMENT_URL, params={"kodeEmiten": "BBCA", "emitenType": "*", "indexFrom": 0,
                                                         "pageSize": 1, "lang": "en"}, timeout=30)
-                if probe.status_code == 200:
+                if probe.status_code == 200 and probe.text.lstrip().startswith("{"):
                     return s
-                last = f"HTTP {probe.status_code}"
+                last = (f"HTTP {probe.status_code}" if probe.status_code != 200
+                        else "challenge page (200, non-JSON)")
             except Exception as e:
                 last = f"{type(e).__name__}: {e}"
             print(f"  {imp}: probe {last}")
     raise IdxUnreachable(f"IDX unreachable with every TLS fingerprint, {rounds} rounds (last: {last})")
+
+
+def _is_challenge(resp) -> bool:
+    """Cloudflare's JS challenge is a 200 with an HTML body, not the JSON/PDF we asked for."""
+    head = resp.content[:300].lstrip().lower()
+    return head.startswith(b"<") and b"<html" in head
 
 
 def _get(url: str, params: dict | None = None, retries: int = 4):
@@ -89,10 +96,12 @@ def _get(url: str, params: dict | None = None, retries: int = 4):
         try:
             _session = _session or _new_session()
             resp = _session.get(url, params=params, timeout=60)
-            if resp.status_code == 200:
+            challenge = _is_challenge(resp)
+            if resp.status_code == 200 and not challenge:
                 return resp
-            print(f"  HTTP {resp.status_code} for {url}")
-            if resp.status_code == 403:
+            print(f"  challenge page for {url}" if challenge
+                  else f"  HTTP {resp.status_code} for {url}")
+            if resp.status_code == 403 or challenge:
                 _session = None  # Cloudflare challenge: try a fresh session / fingerprint
             elif resp.status_code == 429:
                 time.sleep(30 * (attempt + 1))  # rate limited: back off well beyond the usual retry
