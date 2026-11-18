@@ -42,7 +42,7 @@ PARSER_VERSION = 2
 TRAILING = timedelta(days=31)
 
 # Cloudflare accepts some TLS fingerprints and not others, and that changes over time
-_FINGERPRINTS = ["chrome124", "safari", "chrome", "chrome131"]
+_FINGERPRINTS = ["safari17_0", "chrome124", "safari", "chrome131"]
 _proxy = os.getenv("PROXY_URL", "")
 _PROXIES = {"http": _proxy, "https": _proxy} if _proxy else None
 _session = None

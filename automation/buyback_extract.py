@@ -45,18 +45,24 @@ def excluded_title(title: str) -> bool:
     return bool(_EXCLUDE_TITLE.search(" ".join(title.split())))
 
 _proxy = os.getenv("PROXY_URL", "")
-_session = cffi_requests.Session(
-    impersonate="chrome",
-    proxies={"http": _proxy, "https": _proxy} if _proxy else None,
-    # The proxy re-signs HTTPS with its own certificate, so verification fails through it
-    verify=not _proxy,
-)
+_PROXIES = {"http": _proxy, "https": _proxy} if _proxy else None
+# Cloudflare accepts some TLS fingerprints and rejects the rest, and that set rotates over time
+_FINGERPRINTS = ["safari17_0", "chrome124", "chrome131"]
+
+
+def _session_for(impersonate: str):
+    return cffi_requests.Session(
+        impersonate=impersonate,
+        proxies=_PROXIES,
+        # The proxy re-signs HTTPS with its own certificate, so verification fails through it
+        verify=not _proxy,
+    )
 
 
 def _get(url: str, params: dict | None = None, retries: int = 6):
     for attempt in range(retries):
         try:
-            resp = _session.get(url, params=params, timeout=60)
+            resp = _session_for(_FINGERPRINTS[attempt % len(_FINGERPRINTS)]).get(url, params=params, timeout=60)
             if resp.status_code == 200:
                 return resp
             print(f"  HTTP {resp.status_code} for {url}")
