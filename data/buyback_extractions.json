@@ -34524,7 +34524,7 @@
   "guard_issues": [],
   "model": "qwen/qwen3.8-flash",
   "rounds": 1,
-  "synced": false,
+  "synced": true,
   "version": 4
  },
  "20260925172741-133./CORSEC/EKS/IX/2026_en-us": {
@@ -39782,6 +39782,48 @@
      "value": null
     }
    ],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261116172354-074/HE/XI/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261115_HRUM_Laporan Informasi dan Fakta Material_32185581.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/932e44e08b_108486d2f7.pdf"
+    },
+    {
+     "filename": "20261115_HRUM_Laporan Informasi dan Fakta Material_32185581_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/9afd918508_4899e0c1ae.pdf"
+    }
+   ],
+   "id": "20261116172354-074/HE/XI/2026_en-us",
+   "publish_date": "2026-11-16T17:23:54",
+   "symbol": "HRUM",
+   "title": "Disclosure of Information in relation to the Share Buyback Program of PT Harum Energy Tbk"
+  },
+  "cost": 0.00183999,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": null,
+   "doc_type": "termination",
+   "is_share_buyback": true,
+   "mandate_end_date": "2026-11-17",
+   "mandate_start_date": "2026-09-28",
+   "max_shares": null,
+   "notes": "Termination notice: buyback period was 28 Sep 2026-24 Dec 2026 but ended early effective 17 Nov 2026 due to planned internal restructuring by controlling shareholders; no budget, share totals or transaction figures are disclosed in this document.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "HRUM",
+   "transactions": [],
    "utilized_fund": null
   },
   "guard_issues": [],
