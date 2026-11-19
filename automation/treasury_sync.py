@@ -42,7 +42,9 @@ PARSER_VERSION = 2
 TRAILING = timedelta(days=31)
 
 # Cloudflare accepts some TLS fingerprints and not others, and that changes over time
-_FINGERPRINTS = ["safari17_0", "chrome124", "safari", "chrome131"]
+# Measured 19 Nov: only these pass every IDX endpoint reliably; the chrome
+# variants 200/403 intermittently on the same URL, so they are not used.
+_FINGERPRINTS = ["safari17_0", "safari17_2_ios"]
 _proxy = os.getenv("PROXY_URL", "")
 _PROXIES = {"http": _proxy, "https": _proxy} if _proxy else None
 _session = None
@@ -58,29 +60,38 @@ class IdxUnreachable(RuntimeError):
     """No session could reach IDX at all; retrying company by company would only waste time."""
 
 
+# The proxy hides the runner IP but stalls often, so each fingerprint is tried through it
+# first and then directly before the ladder moves on
+_ROUTES = [_PROXIES, None] if _PROXIES else [None]
+
+
 def _new_session(rounds: int = 3):
     last = None
     for attempt in range(rounds):
         if attempt:
             time.sleep(60 * attempt)  # IDX / the proxy can stall for minutes; wait it out before giving up
         for imp in _FINGERPRINTS:
-            # The proxy re-signs HTTPS with its own certificate, so verification fails through it
-            s = cffi_requests.Session(impersonate=imp, proxies=_PROXIES, verify=not _proxy)
-            try:
-                # Home page warm-up only picks up cookies; the probe below decides whether the session works
-                s.get("https://www.idx.co.id/en/", timeout=30)
-            except Exception as e:
-                print(f"  {imp}: home page {type(e).__name__}: {e}")
-            try:
-                probe = s.get(ANNOUNCEMENT_URL, params={"kodeEmiten": "BBCA", "emitenType": "*", "indexFrom": 0,
-                                                        "pageSize": 1, "lang": "en"}, timeout=30)
-                if probe.status_code == 200 and probe.text.lstrip().startswith("{"):
-                    return s
-                last = (f"HTTP {probe.status_code}" if probe.status_code != 200
-                        else "challenge page (200, non-JSON)")
-            except Exception as e:
-                last = f"{type(e).__name__}: {e}"
-            print(f"  {imp}: probe {last}")
+            for route in _ROUTES:
+                where = "proxy" if route else "direct"
+                # The proxy re-signs HTTPS with its own certificate, so verification fails through it
+                s = cffi_requests.Session(impersonate=imp, proxies=route, verify=not route)
+                try:
+                    # Home page warm-up only picks up cookies; the probe decides if the session works
+                    try:
+                        s.get("https://www.idx.co.id/en/", timeout=30)
+                    except Exception as e:
+                        print(f"  {imp} ({where}): home page {type(e).__name__}: {e}")
+                    probe = s.get(ANNOUNCEMENT_URL, params={"kodeEmiten": "BBCA", "emitenType": "*",
+                                                           "indexFrom": 0, "pageSize": 1, "lang": "en"},
+                                  timeout=30)
+                    if probe.status_code == 200 and probe.text.lstrip().startswith("{"):
+                        return s            # caller owns the session from here
+                    last = (f"HTTP {probe.status_code}" if probe.status_code != 200
+                            else "challenge page (200, non-JSON)")
+                except Exception as e:
+                    last = f"{type(e).__name__}: {e}"
+                s.close()                   # nothing usable on this route
+                print(f"  {imp} ({where}): probe {last}")
     raise IdxUnreachable(f"IDX unreachable with every TLS fingerprint, {rounds} rounds (last: {last})")
 
 
@@ -102,6 +113,7 @@ def _get(url: str, params: dict | None = None, retries: int = 4):
             print(f"  challenge page for {url}" if challenge
                   else f"  HTTP {resp.status_code} for {url}")
             if resp.status_code == 403 or challenge:
+                _session.close()
                 _session = None  # Cloudflare challenge: try a fresh session / fingerprint
             elif resp.status_code == 429:
                 time.sleep(30 * (attempt + 1))  # rate limited: back off well beyond the usual retry

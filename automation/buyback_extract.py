@@ -46,16 +46,20 @@ def excluded_title(title: str) -> bool:
 
 _proxy = os.getenv("PROXY_URL", "")
 _PROXIES = {"http": _proxy, "https": _proxy} if _proxy else None
-# Cloudflare accepts some TLS fingerprints and rejects the rest, and that set rotates over time
-_FINGERPRINTS = ["safari17_0", "chrome124", "chrome131"]
+# Cloudflare accepts some TLS fingerprints and rejects the rest, and that set rotates over time.
+# Measured 19 Nov: only these pass every IDX endpoint reliably; the chrome variants return
+# 200/403 intermittently on the same URL, so they are not used.
+_FINGERPRINTS = ["safari17_0", "safari17_2_ios"]
+# The proxy hides the runner IP but stalls often, so try it first and then go direct
+_ROUTES = [_PROXIES, None] if _PROXIES else [None]
 
 
-def _session_for(impersonate: str):
+def _session_for(impersonate: str, proxies=None):
     return cffi_requests.Session(
         impersonate=impersonate,
-        proxies=_PROXIES,
+        proxies=proxies,
         # The proxy re-signs HTTPS with its own certificate, so verification fails through it
-        verify=not _proxy,
+        verify=not proxies,
     )
 
 
@@ -67,14 +71,20 @@ def _is_challenge(resp) -> bool:
 
 def _get(url: str, params: dict | None = None, retries: int = 6):
     for attempt in range(retries):
-        try:
-            resp = _session_for(_FINGERPRINTS[attempt % len(_FINGERPRINTS)]).get(url, params=params, timeout=60)
-            if resp.status_code == 200 and not _is_challenge(resp):
-                return resp
-            print(f"  HTTP {resp.status_code} for {url}" if resp.status_code != 200
-                  else f"  challenge page for {url}")
-        except Exception as e:  # curl timeouts, resets
-            print(f"  {type(e).__name__} for {url}: {e}")
+        imp = _FINGERPRINTS[attempt % len(_FINGERPRINTS)]
+        for route in _ROUTES:
+            where = "proxy" if route else "direct"
+            session = _session_for(imp, route)
+            try:
+                resp = session.get(url, params=params, timeout=60)
+                if resp.status_code == 200 and not _is_challenge(resp):
+                    return resp
+                print(f"  {where}: HTTP {resp.status_code} for {url}" if resp.status_code != 200
+                      else f"  {where}: challenge page for {url}")
+            except Exception as e:  # curl timeouts, resets
+                print(f"  {where}: {type(e).__name__} for {url}: {e}")
+            finally:
+                session.close()
         time.sleep(5 * (attempt + 1))
     raise RuntimeError(f"Failed to fetch {url}")
 
