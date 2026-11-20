@@ -41,10 +41,11 @@ PARSER_VERSION = 2
 # Keep tracking a program this long after its period ends, to pick up the final month-end report
 TRAILING = timedelta(days=31)
 
-# Cloudflare accepts some TLS fingerprints and not others, and that changes over time
-# Measured 19 Nov: only these pass every IDX endpoint reliably; the chrome
-# variants 200/403 intermittently on the same URL, so they are not used.
-_FINGERPRINTS = ["safari17_0", "safari17_2_ios"]
+# Cloudflare accepts some TLS fingerprints and rejects the rest, and that set rotates over
+# time. Verified 20 Nov on 7 IDX endpoints + 8x soak: firefox133 and tor145 pass reliably;
+# the 19 Nov winners (safari17_0, safari17_2_ios) are 403 today but kept at the bottom so a
+# rotation back costs one extra try instead of a failed run.
+_FINGERPRINTS = ["firefox133", "tor145", "safari17_0", "safari17_2_ios"]
 _proxy = os.getenv("PROXY_URL", "")
 _PROXIES = {"http": _proxy, "https": _proxy} if _proxy else None
 _session = None
