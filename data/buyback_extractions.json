@@ -40440,5 +40440,101 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261120090119-0996/EXT/CSEC/CEOD/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261119_EXCL_Laporan Informasi dan Fakta Material_32186736.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/92b9aff368_db3fede04d.pdf"
+    },
+    {
+     "filename": "20261119_EXCL_Laporan Informasi dan Fakta Material_32186736_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/074d046381_017c328502.pdf"
+    },
+    {
+     "filename": "20261119_EXCL_Laporan Informasi dan Fakta Material_32186736_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/e7dcdce8e4_ea274081a1.pdf"
+    }
+   ],
+   "id": "20261120090119-0996/EXT/CSEC/CEOD/2026_en-us",
+   "publish_date": "2026-11-20T09:01:19",
+   "symbol": "EXCL",
+   "title": "Buyback Shares Implementation Plan in Significantly Fluctuating Market Conditions"
+  },
+  "cost": 0.00316449,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 1000000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-02-22",
+   "mandate_start_date": "2026-11-23",
+   "max_shares": null,
+   "notes": "",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "EXCL",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261120142009-013020/KS.10/SUP/50000026/2000/11.2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261120_SMGR_Laporan Informasi dan Fakta Material_32186830.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/4ab07071ce_f834e71ca6.pdf"
+    },
+    {
+     "filename": "20261120_SMGR_Laporan Informasi dan Fakta Material_32186830_lamp2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/38a2a16383_9d4c8cfbb6.pdf"
+    },
+    {
+     "filename": "20261120_SMGR_Laporan Informasi dan Fakta Material_32186830_lamp3.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/7558bee205_19519b8029.pdf"
+    },
+    {
+     "filename": "20261120_SMGR_Laporan Informasi dan Fakta Material_32186830_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/aaedde23c5_ddc1e4e055.pdf"
+    }
+   ],
+   "id": "20261120142009-013020/KS.10/SUP/50000026/2000/11.2026_en-us",
+   "publish_date": "2026-11-20T14:20:09",
+   "symbol": "SMGR",
+   "title": "PT Semen Indonesia (Persero) Tbk's Buyback Implementation Plan"
+  },
+  "cost": 0.00374696,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 250000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-02-20",
+   "mandate_start_date": "2026-11-20",
+   "max_shares": null,
+   "notes": "Plan only with no purchases yet; maximum number of shares is not stated numerically (only capped at 20% of issued/paid-up capital), and the period end is derived as 3 months after the 2026-11-20 disclosure.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "SMGR",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
