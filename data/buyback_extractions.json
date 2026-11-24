@@ -40536,5 +40536,98 @@
   "rounds": 1,
   "synced": true,
   "version": 4
+ },
+ "20261123155409-112/PBS-CSL/XI/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261123_PBSA_E006_12845d25-3e69-4e98-b12d-4eabd36ce2c2.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/20261123_PBSA_E006_12845d25-3e69-4e98-b12d-4eabd36ce2c2-20261123155411.pdf"
+    },
+    {
+     "filename": "20261123_PBSA_E006_12845d25-3e69-4e98-b12d-4eabd36ce2c2_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/20261123_PBSA_E006_12845d25-3e69-4e98-b12d-4eabd36ce2c2_lamp1-20261123155411.pdf"
+    }
+   ],
+   "id": "20261123155409-112/PBS-CSL/XI/2026_en-us",
+   "publish_date": "2026-11-23T15:54:09",
+   "symbol": "PBSA",
+   "title": "Share Buyback Plan under Significant Market Volatility Conditions"
+  },
+  "cost": 0.00230374,
+  "extraction": {
+   "accumulated_shares_purchased": 380300,
+   "allocated_fund": 100000000000,
+   "doc_type": "progress_report",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-01-19",
+   "mandate_start_date": "2026-10-20",
+   "max_shares": null,
+   "notes": "The letter's printed total value (Rp108,730,399) does not equal 380,300 shares at Rp286, and no remaining budget is printed.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": "2026-11-20",
+   "stated_total_shares": 380300,
+   "stated_total_value": 108730399,
+   "symbol": "PBSA",
+   "transactions": [
+    {
+     "average_price": 286,
+     "date": "2026-11-20",
+     "percentage_of_shares": null,
+     "remaining_budget": null,
+     "share_amount": 380300,
+     "value": 108730399
+    }
+   ],
+   "utilized_fund": 108730399
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261124142541-05-REVISI/CORSEC-PGP/XI/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261124_GPRA_E006_bdc70493-5f8f-4a90-ad78-7fc078a35300.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/20261124_GPRA_E006_bdc70493-5f8f-4a90-ad78-7fc078a35300-20261124142543.pdf"
+    },
+    {
+     "filename": "20261124_GPRA_E006_bdc70493-5f8f-4a90-ad78-7fc078a35300_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/20261124_GPRA_E006_bdc70493-5f8f-4a90-ad78-7fc078a35300_lamp1-20261124142544.pdf"
+    }
+   ],
+   "id": "20261124142541-05-REVISI/CORSEC-PGP/XI/2026_en-us",
+   "publish_date": "2026-11-24T14:25:41",
+   "symbol": "GPRA",
+   "title": "Share Buyback Plan under Significant Market Volatility Conditions"
+  },
+  "cost": 0.00369445,
+  "extraction": {
+   "accumulated_shares_purchased": null,
+   "allocated_fund": 40000000000,
+   "doc_type": "plan",
+   "is_share_buyback": true,
+   "mandate_end_date": "2027-02-23",
+   "mandate_start_date": "2026-11-23",
+   "max_shares": 333333333,
+   "notes": "Cover form (Lampiran 1) lists the schedule as '23 November 2026 s.d. 23 November 2026' (an apparent typo); the attached disclosure letter (Sections A.I, E, H) gives the buyback period as 23 November 2026 – 23 February 2027, which is used here. No purchases reported yet.",
+   "previous_programs": [],
+   "remaining_budget": null,
+   "report_as_of_date": null,
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "GPRA",
+   "transactions": [],
+   "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
  }
 }
