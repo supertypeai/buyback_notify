@@ -102,6 +102,13 @@ def _is_challenge(resp) -> bool:
     return head.startswith(b"<") and b"<html" in head
 
 
+def _drop_session():
+    """Forget the current session, so the next attempt rebuilds through the fingerprint ladder."""
+    global _session
+    if _session is not None:
+        _session.close()
+        _session = None
+
 def _get(url: str, params: dict | None = None, retries: int = 4):
     global _session
     for attempt in range(retries):
@@ -114,14 +121,17 @@ def _get(url: str, params: dict | None = None, retries: int = 4):
             print(f"  challenge page for {url}" if challenge
                   else f"  HTTP {resp.status_code} for {url}")
             if resp.status_code == 403 or challenge:
-                _session.close()
-                _session = None  # Cloudflare challenge: try a fresh session / fingerprint
+                _drop_session()         # Cloudflare challenge: try a fresh session / fingerprint
             elif resp.status_code == 429:
                 time.sleep(30 * (attempt + 1))  # rate limited: back off well beyond the usual retry
         except IdxUnreachable:
             raise
         except Exception as e:
+            # A TLS/connection failure means this fingerprint+route is dead (curl: (35) TLS connect
+            # error through a stalled proxy). Keeping the session would fail every company the same
+            # way, so drop it and let the next attempt rebuild through the ladder.
             print(f"  {type(e).__name__} for {url}: {e}")
+            _drop_session()
         time.sleep(5 * (attempt + 1))
     raise RuntimeError(f"Failed to fetch {url}")
 
