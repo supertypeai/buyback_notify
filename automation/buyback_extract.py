@@ -14,7 +14,6 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
-from curl_cffi import requests as cffi_requests
 
 from buyback_guards import SOFT_ISSUE_PREFIX, check, fix_scale, pdf_text, pdf_text_partial, repair
 
@@ -44,51 +43,10 @@ _EXCLUDE_TITLE = re.compile(
 def excluded_title(title: str) -> bool:
     return bool(_EXCLUDE_TITLE.search(" ".join(title.split())))
 
-_proxy = os.getenv("PROXY_URL", "")
-_PROXIES = {"http": _proxy, "https": _proxy} if _proxy else None
-# Cloudflare accepts some TLS fingerprints and rejects the rest, and that set rotates over
-# time. Verified 20 Nov on 7 IDX endpoints + 8x soak: firefox133 and tor145 pass reliably;
-# the 19 Nov winners (safari17_0, safari17_2_ios) are 403 today but kept at the bottom so a
-# rotation back costs one extra try instead of a failed run.
-_FINGERPRINTS = ["firefox133", "tor145", "safari17_0", "safari17_2_ios"]
-# The proxy hides the runner IP but stalls often, so try it first and then go direct
-_ROUTES = [_PROXIES, None] if _PROXIES else [None]
 
-
-def _session_for(impersonate: str, proxies=None):
-    return cffi_requests.Session(
-        impersonate=impersonate,
-        proxies=proxies,
-        # The proxy re-signs HTTPS with its own certificate, so verification fails through it
-        verify=not proxies,
-    )
-
-
-def _is_challenge(resp) -> bool:
-    """Cloudflare's JS challenge is a 200 with an HTML body, not the JSON/PDF we asked for."""
-    head = resp.content[:300].lstrip().lower()
-    return head.startswith(b"<") and b"<html" in head
-
-
-def _get(url: str, params: dict | None = None, retries: int = 6):
-    for attempt in range(retries):
-        imp = _FINGERPRINTS[attempt % len(_FINGERPRINTS)]
-        for route in _ROUTES:
-            where = "proxy" if route else "direct"
-            session = _session_for(imp, route)
-            try:
-                resp = session.get(url, params=params, timeout=60)
-                if resp.status_code == 200 and not _is_challenge(resp):
-                    return resp
-                print(f"  {where}: HTTP {resp.status_code} for {url}" if resp.status_code != 200
-                      else f"  {where}: challenge page for {url}")
-            except Exception as e:  # curl timeouts, resets
-                print(f"  {where}: {type(e).__name__} for {url}: {e}")
-            finally:
-                session.close()
-        time.sleep(5 * (attempt + 1))
-    raise RuntimeError(f"Failed to fetch {url}")
-
+def _get(url: str, params: dict | None = None, kind: str = "json"):
+    """Fetch through the shared IDX ladder (see idx_fetch.py)."""
+    return idx_get(url, kind=kind, params=params)
 
 def fetch_buyback_announcements(date_from: str, date_to: str) -> list[dict]:
     """All buyback-related announcements published between two YYYYMMDD dates."""
@@ -99,7 +57,8 @@ def fetch_buyback_announcements(date_from: str, date_to: str) -> list[dict]:
             data = _get(IDX_API_URL, {
                 "keywords": kw, "pageNumber": page, "pageSize": 100, "lang": "en",
                 "dateFrom": date_from, "dateTo": date_to,
-            }).json()
+            }, kind="json")
+            data = json.loads(data)
             for item in data.get("Items") or []:
                 found.setdefault(item["Id"], item)
             if page >= (data.get("PageCount") or 1):
@@ -141,7 +100,7 @@ def download_pdfs(announcement: dict, pdf_dir: str) -> list[str]:
         os.makedirs(os.path.dirname(path), exist_ok=True)
         if not os.path.exists(path):
             with open(path, "wb") as f:
-                f.write(_get(att["url"]).content)
+                f.write(_get(att["url"], kind="raw"))
             time.sleep(1)
         paths.append(path)
     return paths

@@ -29,7 +29,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from curl_cffi import requests as cffi_requests  # noqa: E402
+from idx_fetch import IdxBlocked, idx_get  # noqa: E402
 
 from buyback_store import TABLE, _d, _sb, fetch_existing  # noqa: E402
 
@@ -41,15 +41,6 @@ PARSER_VERSION = 2
 # Keep tracking a program this long after its period ends, to pick up the final month-end report
 TRAILING = timedelta(days=31)
 
-# Cloudflare accepts some TLS fingerprints and rejects the rest, and that set rotates over
-# time. Verified 20 Nov on 7 IDX endpoints + 8x soak: firefox133 and tor145 pass reliably;
-# the 19 Nov winners (safari17_0, safari17_2_ios) are 403 today but kept at the bottom so a
-# rotation back costs one extra try instead of a failed run.
-_FINGERPRINTS = ["firefox133", "tor145", "safari17_0", "safari17_2_ios"]
-_proxy = os.getenv("PROXY_URL", "")
-_PROXIES = {"http": _proxy, "https": _proxy} if _proxy else None
-_session = None
-
 _MONTHS = {m: i for i, m in enumerate(
     ["januari", "februari", "maret", "april", "mei", "juni", "juli",
      "agustus", "september", "oktober", "november", "desember"], 1)}
@@ -60,81 +51,19 @@ _MONTHS = {m: i for i, m in enumerate(
 class IdxUnreachable(RuntimeError):
     """No session could reach IDX at all; retrying company by company would only waste time."""
 
+_SESSION_OK = False
 
-# The proxy hides the runner IP but stalls often, so each fingerprint is tried through it
-# first and then directly before the ladder moves on
-_ROUTES = [_PROXIES, None] if _PROXIES else [None]
-
-
-def _new_session(rounds: int = 3):
-    last = None
-    for attempt in range(rounds):
-        if attempt:
-            time.sleep(60 * attempt)  # IDX / the proxy can stall for minutes; wait it out before giving up
-        for imp in _FINGERPRINTS:
-            for route in _ROUTES:
-                where = "proxy" if route else "direct"
-                # The proxy re-signs HTTPS with its own certificate, so verification fails through it
-                s = cffi_requests.Session(impersonate=imp, proxies=route, verify=not route)
-                try:
-                    # Home page warm-up only picks up cookies; the probe decides if the session works
-                    try:
-                        s.get("https://www.idx.co.id/en/", timeout=30)
-                    except Exception as e:
-                        print(f"  {imp} ({where}): home page {type(e).__name__}: {e}")
-                    probe = s.get(ANNOUNCEMENT_URL, params={"kodeEmiten": "BBCA", "emitenType": "*",
-                                                           "indexFrom": 0, "pageSize": 1, "lang": "en"},
-                                  timeout=30)
-                    if probe.status_code == 200 and probe.text.lstrip().startswith("{"):
-                        return s            # caller owns the session from here
-                    last = (f"HTTP {probe.status_code}" if probe.status_code != 200
-                            else "challenge page (200, non-JSON)")
-                except Exception as e:
-                    last = f"{type(e).__name__}: {e}"
-                s.close()                   # nothing usable on this route
-                print(f"  {imp} ({where}): probe {last}")
-    raise IdxUnreachable(f"IDX unreachable with every TLS fingerprint, {rounds} rounds (last: {last})")
-
-
-def _is_challenge(resp) -> bool:
-    """Cloudflare's JS challenge is a 200 with an HTML body, not the JSON/PDF we asked for."""
-    head = resp.content[:300].lstrip().lower()
-    return head.startswith(b"<") and b"<html" in head
-
-
-def _drop_session():
-    """Forget the current session, so the next attempt rebuilds through the fingerprint ladder."""
-    global _session
-    if _session is not None:
-        _session.close()
-        _session = None
-
-def _get(url: str, params: dict | None = None, retries: int = 4):
-    global _session
-    for attempt in range(retries):
-        try:
-            _session = _session or _new_session()
-            resp = _session.get(url, params=params, timeout=60)
-            challenge = _is_challenge(resp)
-            if resp.status_code == 200 and not challenge:
-                return resp
-            print(f"  challenge page for {url}" if challenge
-                  else f"  HTTP {resp.status_code} for {url}")
-            if resp.status_code == 403 or challenge:
-                _drop_session()         # Cloudflare challenge: try a fresh session / fingerprint
-            elif resp.status_code == 429:
-                time.sleep(30 * (attempt + 1))  # rate limited: back off well beyond the usual retry
-        except IdxUnreachable:
-            raise
-        except Exception as e:
-            # A TLS/connection failure means this fingerprint+route is dead (curl: (35) TLS connect
-            # error through a stalled proxy). Keeping the session would fail every company the same
-            # way, so drop it and let the next attempt rebuild through the ladder.
-            print(f"  {type(e).__name__} for {url}: {e}")
-            _drop_session()
-        time.sleep(5 * (attempt + 1))
-    raise RuntimeError(f"Failed to fetch {url}")
-
+def _get(url: str, params: dict | None = None, kind: str = "json"):
+    """Fetch through the shared IDX ladder; raise IdxUnreachable only if IDX never answered."""
+    global _SESSION_OK
+    try:
+        body = idx_get(url, kind=kind, params=params)
+        _SESSION_OK = True
+        return body
+    except IdxBlocked as e:
+        if not _SESSION_OK:
+            raise IdxUnreachable(str(e)) from e
+        raise RuntimeError(str(e)) from e
 
 def fetch_reports(code: str, date_from: date, date_to: date) -> list[dict]:
     """Registration reports a company filed between two dates (corrections included)."""
@@ -144,7 +73,8 @@ def fetch_reports(code: str, date_from: date, date_to: date) -> list[dict]:
             "kodeEmiten": code, "emitenType": "*", "indexFrom": page, "pageSize": 100, "lang": "en",
             "dateFrom": date_from.strftime("%Y%m%d"), "dateTo": date_to.strftime("%Y%m%d"),
             "keyword": "Securities Holders Registration",
-        }).json()
+        }, kind="json")
+        data = json.loads(data)
         replies = data.get("Replies") or []
         for r in replies:
             p = r["pengumuman"]
@@ -238,7 +168,7 @@ def parse_period(text: str) -> date | None:
 def parse_report(report: dict) -> dict:
     from liteparse import LiteParse
 
-    pdf = _get(report["url"]).content
+    pdf = _get(report["url"], kind="raw")
     text = LiteParse(ocr_enabled=False, quiet=True).parse(pdf).text
     out = {**report, **parse_treasury(text), "version": PARSER_VERSION}
     month_end = parse_period(text)
