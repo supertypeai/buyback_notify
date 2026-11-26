@@ -196,17 +196,25 @@ def parse_treasury(text: str) -> dict:
         m = re.search(r"Saham\s+Treasur[iy]\b", line)
         if not m:
             continue
-        toks = _TOKEN.findall(line[m.end():])
-        if any(t.endswith("%") for t in toks):
-            share_toks = [t for t in toks if not t.endswith("%")]
-            pct_toks = [t for t in toks if t.endswith("%")]
+        toks = [(mm.start(), mm.group()) for mm in _TOKEN.finditer(line) if mm.start() >= m.end()]
+        if any(t.endswith("%") for _, t in toks):
+            share_toks = [t for _, t in toks if not t.endswith("%")]
+            pct_toks = [t for _, t in toks if t.endswith("%")]
         else:
-            above = _TOKEN.findall(lines[i - 1]) if i else []
-            heads = [t for t in above if not t.endswith("%")]
-            if not toks or len(heads) != len(toks):
+            up = list(_TOKEN.finditer(lines[i - 1])) if i else []
+            heads = [(mm.start(), mm.group()) for mm in up if not mm.group().endswith("%")]
+            pct_toks = [mm.group() for mm in up if mm.group().endswith("%")]
+            if not heads or not toks:
                 return {"error": f"cannot join wrapped treasury numbers: {line.strip()!r}"}
-            share_toks = [h + t for h, t in zip(heads, toks)]
-            pct_toks = [t for t in above if t.endswith("%")]
+            if len(heads) == len(toks):
+                share_toks = [h + t for (_, h), (_, t) in zip(heads, toks)]
+            else:
+                # Uneven wrap: the previous month fits on the line above while the current month
+                # drops only its tail onto the label line, so each fragment is joined to the
+                # column it sits under rather than to a token by position in the list.
+                share_toks = [head + "".join(t for pos, t in toks
+                                             if start <= pos < (heads[k + 1][0] if k + 1 < len(heads) else len(line)))
+                              for k, (start, head) in enumerate(heads)]
         shares = [_shares(t) for t in share_toks]
         pcts = [_pct(t) for t in pct_toks]
         if len(shares) < 2 or None in shares or len(pcts) < 2 or None in pcts:

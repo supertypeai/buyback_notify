@@ -272,14 +272,6 @@
   "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202509/70896ad2c8_a545d719ef.pdf",
   "version": 2
  },
- "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202509/c6359b417f_1a744bfb03.pdf": {
-  "error": "cannot join wrapped treasury numbers: 'Saham Treasury                              0'",
-  "month_end": "2025-08-31",
-  "published": "2025-09-10T16:01:31",
-  "title": "Monthly Report of Securities Holders Registration",
-  "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202509/c6359b417f_1a744bfb03.pdf",
-  "version": 2
- },
  "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202509/c9db0d57bd_0bf5e8217c.pdf": {
   "month_end": "2025-08-31",
   "pct": 0.382,
@@ -1257,14 +1249,6 @@
   "shares": 56978600,
   "title": "Monthly Report of Securities Holders Registration",
   "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202602/e9a112b40a_c608795276.pdf",
-  "version": 2
- },
- "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202602/f84c60819f_f6247b6f69.pdf": {
-  "error": "cannot join wrapped treasury numbers: 'Saham Treasury                                                      4'",
-  "month_end": "2026-01-31",
-  "published": "2026-02-06T17:47:13",
-  "title": "Monthly Report of Securities Holders Registration",
-  "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202602/f84c60819f_f6247b6f69.pdf",
   "version": 2
  },
  "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202603/00fc141b2e_5e52c27f74.pdf": {
@@ -5533,14 +5517,6 @@
   "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/24237f4e95_0a43e4f4fb.pdf",
   "version": 2
  },
- "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/339d0b314c_22cc7a4fa6.pdf": {
-  "error": "cannot join wrapped treasury numbers: 'Saham Treasuri                                                          0'",
-  "month_end": "2026-10-31",
-  "published": "2026-11-09T17:55:54",
-  "title": "Monthly Report of Securities Holders Registration",
-  "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/339d0b314c_22cc7a4fa6.pdf",
-  "version": 2
- },
  "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/34cf2a142b_41813e0e4f.pdf": {
   "month_end": "2026-10-31",
   "pct": 0.0,
@@ -5638,14 +5614,6 @@
   "shares": 37625000,
   "title": "Monthly Report of Securities Holders Registration",
   "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/5732cd2252_3db5810540.pdf",
-  "version": 2
- },
- "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/5dda07fe5a_4aa6787a94.pdf": {
-  "error": "cannot join wrapped treasury numbers: 'Saham Treasuri                                             4'",
-  "month_end": "2026-10-31",
-  "published": "2026-11-10T18:16:35",
-  "title": "Monthly Report of Securities Holders Registration",
-  "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/5dda07fe5a_4aa6787a94.pdf",
   "version": 2
  },
  "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/5fffc903d9_cfb45ec7aa.pdf": {
@@ -6031,14 +5999,6 @@
   "shares": 137077115,
   "title": "Monthly Report of Securities Holders Registration",
   "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/f43bb649e1_e1d44b1769.pdf",
-  "version": 2
- },
- "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/f4c1270c3f_9805fd8753.pdf": {
-  "error": "cannot join wrapped treasury numbers: 'Saham Treasuri                         0'",
-  "month_end": "2026-10-31",
-  "published": "2026-11-10T18:12:45",
-  "title": "Monthly Report of Securities Holders Registration",
-  "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/f4c1270c3f_9805fd8753.pdf",
   "version": 2
  },
  "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/f71a7eb411_b4ac6fb797.pdf": {
