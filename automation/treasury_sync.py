@@ -46,6 +46,11 @@ _MONTHS = {m: i for i, m in enumerate(
      "agustus", "september", "oktober", "november", "desember"], 1)}
 
 
+# The proxy hides the runner IP but stalls often, so the ladder tries it first and then
+# goes direct. Same env var the pipeline always used.
+_proxy = os.getenv("PROXY_URL", "")
+_PROXIES = {"http": _proxy, "https": _proxy} if _proxy else None
+
 # ---------------------------------------------------------------- IDX access
 
 class IdxUnreachable(RuntimeError):
@@ -57,7 +62,7 @@ def _get(url: str, params: dict | None = None, kind: str = "json"):
     """Fetch through the shared IDX ladder; raise IdxUnreachable only if IDX never answered."""
     global _SESSION_OK
     try:
-        body = idx_get(url, kind=kind, params=params)
+        body = idx_get(url, kind=kind, params=params, proxies=_PROXIES, rounds=3, backoff=60)
         _SESSION_OK = True
         return body
     except IdxBlocked as e:

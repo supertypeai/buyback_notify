@@ -15,6 +15,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 
+from idx_fetch import idx_get
+
 from buyback_guards import SOFT_ISSUE_PREFIX, check, fix_scale, pdf_text, pdf_text_partial, repair
 
 IDX_API_URL = "https://www.idx.co.id/primary/NewsAnnouncement/GetAllAnnouncement"
@@ -44,9 +46,12 @@ def excluded_title(title: str) -> bool:
     return bool(_EXCLUDE_TITLE.search(" ".join(title.split())))
 
 
+_proxy = os.getenv("PROXY_URL", "")
+_PROXIES = {"http": _proxy, "https": _proxy} if _proxy else None
+
 def _get(url: str, params: dict | None = None, kind: str = "json"):
     """Fetch through the shared IDX ladder (see idx_fetch.py)."""
-    return idx_get(url, kind=kind, params=params)
+    return idx_get(url, kind=kind, params=params, proxies=_PROXIES, rounds=3, backoff=60)
 
 def fetch_buyback_announcements(date_from: str, date_to: str) -> list[dict]:
     """All buyback-related announcements published between two YYYYMMDD dates."""
