@@ -33092,7 +33092,7 @@
   "guard_issues": [],
   "model": "qwen/qwen3.8-flash",
   "rounds": 1,
-  "synced": false,
+  "synced": true,
   "version": 4
  },
  "20260902183107-112/ERAA/CS/IX/2026_en-us": {
@@ -40623,6 +40623,377 @@
    "symbol": "GPRA",
    "transactions": [],
    "utilized_fund": null
+  },
+  "guard_issues": [],
+  "model": "qwen/qwen3.8-flash",
+  "rounds": 1,
+  "synced": true,
+  "version": 4
+ },
+ "20261127165434-204/BBHI/XI/2026_en-us": {
+  "announcement": {
+   "attachments": [
+    {
+     "filename": "20261127_BBHI_E006_9c933dc5-6c2a-43be-b7ce-972407c21504.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/20261127_BBHI_E006_9c933dc5-6c2a-43be-b7ce-972407c21504-20261127165435.pdf"
+    },
+    {
+     "filename": "20261127_BBHI_E006_9c933dc5-6c2a-43be-b7ce-972407c21504_lamp1.pdf",
+     "url": "https://www.idx.co.id/StaticData/NewsAndAnnouncement/ANNOUNCEMENTSTOCK/From_EREP/202611/20261127_BBHI_E006_9c933dc5-6c2a-43be-b7ce-972407c21504_lamp1-20261127165436.pdf"
+    }
+   ],
+   "id": "20261127165434-204/BBHI/XI/2026_en-us",
+   "publish_date": "2026-11-27T16:54:34",
+   "symbol": "BBHI",
+   "title": "Share Buyback Plan under Significant Market Volatility Conditions"
+  },
+  "cost": 0.01132517,
+  "extraction": {
+   "accumulated_shares_purchased": 355424000,
+   "allocated_fund": 300000000000,
+   "doc_type": "progress_report",
+   "is_share_buyback": true,
+   "mandate_end_date": "2026-12-02",
+   "mandate_start_date": "2026-09-03",
+   "max_shares": null,
+   "notes": "The English cover form mislabels the Rp300 billion budget as 'price', and zero-purchase rows were omitted from transactions.",
+   "previous_programs": [],
+   "remaining_budget": 6830379980,
+   "report_as_of_date": "2026-11-27",
+   "stated_total_shares": null,
+   "stated_total_value": null,
+   "symbol": "BBHI",
+   "transactions": [
+    {
+     "average_price": 900,
+     "date": "2026-09-03",
+     "percentage_of_shares": 0.210889,
+     "remaining_budget": 258684063987,
+     "share_amount": 45826800,
+     "value": null
+    },
+    {
+     "average_price": 900,
+     "date": "2026-09-04",
+     "percentage_of_shares": 0.289013,
+     "remaining_budget": 202062767653,
+     "share_amount": 62803200,
+     "value": null
+    },
+    {
+     "average_price": 899.9902,
+     "date": "2026-09-07",
+     "percentage_of_shares": 0.058937,
+     "remaining_budget": 190516335268,
+     "share_amount": 12807200,
+     "value": null
+    },
+    {
+     "average_price": 899.9914,
+     "date": "2026-09-08",
+     "percentage_of_shares": 0.067212,
+     "remaining_budget": 177348795440,
+     "share_amount": 14605300,
+     "value": null
+    },
+    {
+     "average_price": 899.9932,
+     "date": "2026-09-09",
+     "percentage_of_shares": 0.098747,
+     "remaining_budget": 158003198308,
+     "share_amount": 21457900,
+     "value": null
+    },
+    {
+     "average_price": 899.9489,
+     "date": "2026-09-10",
+     "percentage_of_shares": 0.0765,
+     "remaining_budget": 143016662113,
+     "share_amount": 16623700,
+     "value": null
+    },
+    {
+     "average_price": 899.9027,
+     "date": "2026-09-11",
+     "percentage_of_shares": 0.064752,
+     "remaining_budget": 130332346117,
+     "share_amount": 14070700,
+     "value": null
+    },
+    {
+     "average_price": 899.97,
+     "date": "2026-09-14",
+     "percentage_of_shares": 0.06535,
+     "remaining_budget": 117529881282,
+     "share_amount": 14200700,
+     "value": null
+    },
+    {
+     "average_price": 899.9425,
+     "date": "2026-09-15",
+     "percentage_of_shares": 0.064918,
+     "remaining_budget": 104812370093,
+     "share_amount": 14106900,
+     "value": null
+    },
+    {
+     "average_price": 899.9908,
+     "date": "2026-09-16",
+     "percentage_of_shares": 0.0919,
+     "remaining_budget": 86808162262,
+     "share_amount": 19970100,
+     "value": null
+    },
+    {
+     "average_price": 899.9778,
+     "date": "2026-09-17",
+     "percentage_of_shares": 0.051818,
+     "remaining_budget": 76656669247,
+     "share_amount": 11260100,
+     "value": null
+    },
+    {
+     "average_price": 899.8828,
+     "date": "2026-09-18",
+     "percentage_of_shares": 0.059165,
+     "remaining_budget": 65067083864,
+     "share_amount": 12856600,
+     "value": null
+    },
+    {
+     "average_price": 799.3014,
+     "date": "2026-10-05",
+     "percentage_of_shares": 0.004387,
+     "remaining_budget": 64303693128,
+     "share_amount": 953400,
+     "value": null
+    },
+    {
+     "average_price": 799.2899,
+     "date": "2026-10-06",
+     "percentage_of_shares": 0.004387,
+     "remaining_budget": 63540313411,
+     "share_amount": 953400,
+     "value": null
+    },
+    {
+     "average_price": 799.7367,
+     "date": "2026-10-07",
+     "percentage_of_shares": 0.007881,
+     "remaining_budget": 62168289886,
+     "share_amount": 1712600,
+     "value": null
+    },
+    {
+     "average_price": 771.5039,
+     "date": "2026-10-12",
+     "percentage_of_shares": 0.002544,
+     "remaining_budget": 61740972739,
+     "share_amount": 552900,
+     "value": null
+    },
+    {
+     "average_price": 766.4245,
+     "date": "2026-10-13",
+     "percentage_of_shares": 0.000323,
+     "remaining_budget": 61687066068,
+     "share_amount": 70200,
+     "value": null
+    },
+    {
+     "average_price": 599.5448,
+     "date": "2026-10-26",
+     "percentage_of_shares": 0.008092,
+     "remaining_budget": 60630921033,
+     "share_amount": 1758500,
+     "value": null
+    },
+    {
+     "average_price": 599.2608,
+     "date": "2026-10-27",
+     "percentage_of_shares": 0.007281,
+     "remaining_budget": 59681169907,
+     "share_amount": 1582100,
+     "value": null
+    },
+    {
+     "average_price": 599.5467,
+     "date": "2026-10-28",
+     "percentage_of_shares": 0.006903,
+     "remaining_budget": 58780274191,
+     "share_amount": 1500000,
+     "value": null
+    },
+    {
+     "average_price": 599.0295,
+     "date": "2026-10-29",
+     "percentage_of_shares": 0.004602,
+     "remaining_budget": 58180191781,
+     "share_amount": 1000000,
+     "value": null
+    },
+    {
+     "average_price": 598.87,
+     "date": "2026-10-30",
+     "percentage_of_shares": 0.005249,
+     "remaining_budget": 57495861451,
+     "share_amount": 1140700,
+     "value": null
+    },
+    {
+     "average_price": 599.5663,
+     "date": "2026-11-02",
+     "percentage_of_shares": 0.005279,
+     "remaining_budget": 56806831452,
+     "share_amount": 1147200,
+     "value": null
+    },
+    {
+     "average_price": 599.202,
+     "date": "2026-11-03",
+     "percentage_of_shares": 0.004602,
+     "remaining_budget": 56206576241,
+     "share_amount": 1000000,
+     "value": null
+    },
+    {
+     "average_price": 598.4855,
+     "date": "2026-11-04",
+     "percentage_of_shares": 0.004602,
+     "remaining_budget": 55607038778,
+     "share_amount": 1000000,
+     "value": null
+    },
+    {
+     "average_price": 594.829,
+     "date": "2026-11-05",
+     "percentage_of_shares": 0.004602,
+     "remaining_budget": 55011164181,
+     "share_amount": 1000000,
+     "value": null
+    },
+    {
+     "average_price": 599.9939,
+     "date": "2026-11-06",
+     "percentage_of_shares": 0.017777,
+     "remaining_budget": 52689342431,
+     "share_amount": 3863000,
+     "value": null
+    },
+    {
+     "average_price": 599.8139,
+     "date": "2026-11-10",
+     "percentage_of_shares": 0.008568,
+     "remaining_budget": 51570654699,
+     "share_amount": 1861800,
+     "value": null
+    },
+    {
+     "average_price": 599.9974,
+     "date": "2026-11-11",
+     "percentage_of_shares": 0.006242,
+     "remaining_budget": 50755451413,
+     "share_amount": 1356300,
+     "value": null
+    },
+    {
+     "average_price": 599.8693,
+     "date": "2026-11-12",
+     "percentage_of_shares": 0.021519,
+     "remaining_budget": 47945508822,
+     "share_amount": 4676100,
+     "value": null
+    },
+    {
+     "average_price": 599.9577,
+     "date": "2026-11-13",
+     "percentage_of_shares": 0.019493,
+     "remaining_budget": 45399773417,
+     "share_amount": 4235800,
+     "value": null
+    },
+    {
+     "average_price": 600,
+     "date": "2026-11-16",
+     "percentage_of_shares": 0.000409,
+     "remaining_budget": 45346390657,
+     "share_amount": 88800,
+     "value": null
+    },
+    {
+     "average_price": 600,
+     "date": "2026-11-17",
+     "percentage_of_shares": 0.00092,
+     "remaining_budget": 45226171737,
+     "share_amount": 200000,
+     "value": null
+    },
+    {
+     "average_price": 600,
+     "date": "2026-11-18",
+     "percentage_of_shares": 0.00091,
+     "remaining_budget": 45107275115,
+     "share_amount": 197800,
+     "value": null
+    },
+    {
+     "average_price": 600,
+     "date": "2026-11-19",
+     "percentage_of_shares": 0.006508,
+     "remaining_budget": 44257207737,
+     "share_amount": 1414300,
+     "value": null
+    },
+    {
+     "average_price": 600,
+     "date": "2026-11-20",
+     "percentage_of_shares": 0.010986,
+     "remaining_budget": 42822323963,
+     "share_amount": 2387300,
+     "value": null
+    },
+    {
+     "average_price": 599.9693,
+     "date": "2026-11-23",
+     "percentage_of_shares": 0.05519,
+     "remaining_budget": 35614354716,
+     "share_amount": 11993000,
+     "value": null
+    },
+    {
+     "average_price": 599.992,
+     "date": "2026-11-24",
+     "percentage_of_shares": 0.051091,
+     "remaining_budget": 28941456408,
+     "share_amount": 11102300,
+     "value": null
+    },
+    {
+     "average_price": 614.7633,
+     "date": "2026-11-25",
+     "percentage_of_shares": 0.052711,
+     "remaining_budget": 21887564944,
+     "share_amount": 11454200,
+     "value": null
+    },
+    {
+     "average_price": 600,
+     "date": "2026-11-26",
+     "percentage_of_shares": 0.055574,
+     "remaining_budget": 14629160041,
+     "share_amount": 12076300,
+     "value": null
+    },
+    {
+     "average_price": 620,
+     "date": "2026-11-27",
+     "percentage_of_shares": 0.057785,
+     "remaining_budget": 6830379980,
+     "share_amount": 12556800,
+     "value": null
+    }
+   ],
+   "utilized_fund": 293169620020
   },
   "guard_issues": [],
   "model": "qwen/qwen3.8-flash",
